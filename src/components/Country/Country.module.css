@@ -1,0 +1,29 @@
+.card {
+    border-radius: 10px;
+    background-color: antiquewhite;
+    height: 50vh;
+}
+
+.cardFlag {
+    height: 20vh;
+    border-radius: 10px;
+
+}
+
+.cardFlag img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+
+}
+
+.cardBody {
+    padding: 2rem;
+
+}
+
+.cardText {
+    display: flex;
+    flex-direction: column;
+}
+
