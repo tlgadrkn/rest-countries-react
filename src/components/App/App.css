@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
+:root {
+  --lightModeBackground: hsl(0, 0%, 98%);
+  --lightModeText:  hsl(200, 15%, 8%);
+  --lightModeInput: hsl(0, 0%, 52%);
+  --darkModeBackground: hsl(207, 26%, 17%);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +18,7 @@ body {
   margin: 0 auto;
   font-size: 16px;
   font-family: 'Nunito Sans', sans-serif;
-  background-color: #fff;
+  background-color: var(--lightModeBackground);
 }
 .App {
   background-color: hsl(0, 0%, 98%);

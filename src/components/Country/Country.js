@@ -11,16 +11,13 @@ return (
                 <img src="https://restcountries.eu/data/col.svg" alt="country flag"></img>
             </div>
             <div className={styles.cardBody}>
-                <div className={styles.cardText}>
-                    <h3>CARD TEXT</h3>
-                    <ul>
-                        <li>some text</li>
-                        <li>some text</li>
-                        <li>some text</li>
-                        <li>some text</li>
+            <h2>Colombia</h2>
+                    <ul className={styles.countryDetails}>
+                        <li> <strong>Population:</strong> 123124534634</li>
+                        <li> <strong>Region:</strong>South America</li>
+                        <li><strong>Capital:</strong>Bogota</li>
                     </ul>
 
-                </div>
             </div>
 
         </div>
