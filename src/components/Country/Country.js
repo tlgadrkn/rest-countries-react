@@ -2,20 +2,21 @@ import React from 'react'
 import styles from './Country.module.css'
 
 
-const Country = () => {
+const Country = ({countryName, countryFlag, countryPopulation, countrySubregion, countryCapital}) => {
+console.log(countryFlag);
 
 return (
     <React.Fragment>
         <div className={styles.card}>
             <div className={styles.cardFlag}>
-                <img src="https://restcountries.eu/data/col.svg" alt="country flag"></img>
+                <img src={countryFlag} alt={`${countryFlag} - ${countryFlag}`}></img>
             </div>
             <div className={styles.cardBody}>
-            <h2>Colombia</h2>
+            <h2>{countryName}</h2>
                     <ul className={styles.countryDetails}>
-                        <li> <strong>Population:</strong> 123124534634</li>
-                        <li> <strong>Region:</strong>South America</li>
-                        <li><strong>Capital:</strong>Bogota</li>
+                        <li><strong>Population: </strong>{countryPopulation}</li>
+                        <li><strong>Capital: </strong>{countryCapital}</li>
+                        <li><strong>Region: </strong>{countrySubregion}</li>
                     </ul>
 
             </div>
