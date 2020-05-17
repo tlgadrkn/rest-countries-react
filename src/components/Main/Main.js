@@ -9,8 +9,6 @@ return (
     <React.Fragment>
             <main>
                 {countriesToLoad.map( (country, index) => {
-                        console.log(country.name);
-
                     return < Country 
                             countryName={country.name} 
                             countryFlag={country.flag} 

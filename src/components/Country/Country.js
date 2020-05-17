@@ -3,15 +3,13 @@ import styles from './Country.module.css'
 
 
 const Country = ({countryName, countryFlag, countryPopulation, countrySubregion, countryCapital}) => {
-console.log(countryFlag);
 
-return (
+    return (
     <React.Fragment>
+        <a href="#">
         <div className={styles.card}>
-            <div className={styles.cardFlag}>
-                <img src={countryFlag} alt={`${countryFlag} - ${countryFlag}`}></img>
-            </div>
-            <div className={styles.cardBody}>
+                <img src={countryFlag} alt={`${countryName} flag`}></img>
+            <div className={styles.cardContainer}>
             <h2>{countryName}</h2>
                     <ul className={styles.countryDetails}>
                         <li><strong>Population: </strong>{countryPopulation}</li>
@@ -22,7 +20,7 @@ return (
             </div>
 
         </div>
-
+        </a>
     </React.Fragment>
 )
 

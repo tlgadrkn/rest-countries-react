@@ -1,0 +1,25 @@
+.searchBar {
+    position: relative;
+    padding: 3em;
+}
+.searchBar input[type=text] {
+    width: 15rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+  }
+  .searchBar input[type=text]:focus {
+    width: 100%;
+  }
+
+  .searchBar img {
+    position: absolute;
+    top: 3.9rem;
+    width: 3rem;
+    height: 1rem;
+
+  }
+  

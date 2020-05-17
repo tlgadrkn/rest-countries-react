@@ -1,0 +1,10 @@
+.filterContent {
+    padding: 3em;
+}
+
+.filterContent button {
+    width: 10rem;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 1rem;
+}

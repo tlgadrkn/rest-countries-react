@@ -23,6 +23,17 @@ body {
 .App {
   background-color: hsl(0, 0%, 98%);
   display: flex;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 2vmin);   
 }
 
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.navBottom {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+}
