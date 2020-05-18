@@ -8,7 +8,7 @@ const searchCountry = ({handleSearch}) => {
         <div className={styles.searchBar}>
         <span> <img src={searchIcon} alt="seach bar icon"/> </span>
         <input onInput={handleSearch} style={styles} type="text" name="search" placeholder={`Search for a country`}/>
-
+        
         </div>
 
     </>

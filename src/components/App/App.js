@@ -1,4 +1,4 @@
-import React, {useState, setState, useEffect} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import styles from './App.module.css';
 import Navbar from '../Navbar/Navbar.js';
 import SearchCountry from '../searchCountry/searchCountry.js';
@@ -36,15 +36,14 @@ useEffect(() => {
 setCountries(tempCountries)
 }, [])
 
-
 function handleSearch(e) {
-  if (e.target.value === "") {
-    setCountries(tempCountries)
-  }
-     
-  console.log(e.target.value);
   let filtered = countries.filter(country => country.name.toUpperCase().includes(e.target.value.toUpperCase()))
   setCountries(filtered)  
+
+  if (e.target.value.length === 0) {
+    console.log(tempCountries);
+    setCountries(tempCountries)
+  }
 }
 
   return (

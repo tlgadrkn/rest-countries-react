@@ -12,7 +12,7 @@ const Country = ({countryName, countryFlag, countryPopulation, countryRegion, co
             <div className={styles.cardContainer}>
             <h3>{countryName}</h3>
                     <ul className={styles.countryDetails}>
-                        <li><strong>Population: </strong>{countryPopulation}</li>
+                        <li><strong>Population: </strong>{countryPopulation.toLocaleString()}</li>
                         <li><strong>Capital: </strong>{countryCapital}</li>
                         <li><strong>Region: </strong>{countryRegion}</li>
                     </ul>
