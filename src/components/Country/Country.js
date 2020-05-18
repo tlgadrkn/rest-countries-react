@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Country.module.css'
 
 
-const Country = ({countryName, countryFlag, countryPopulation, countrySubregion, countryCapital}) => {
+const Country = ({countryName, countryFlag, countryPopulation, countryRegion, countryCapital}) => {
 
     return (
     <React.Fragment>
@@ -10,11 +10,11 @@ const Country = ({countryName, countryFlag, countryPopulation, countrySubregion,
         <div className={styles.card}>
                 <img src={countryFlag} alt={`${countryName} flag`}></img>
             <div className={styles.cardContainer}>
-            <h2>{countryName}</h2>
+            <h3>{countryName}</h3>
                     <ul className={styles.countryDetails}>
                         <li><strong>Population: </strong>{countryPopulation}</li>
                         <li><strong>Capital: </strong>{countryCapital}</li>
-                        <li><strong>Region: </strong>{countrySubregion}</li>
+                        <li><strong>Region: </strong>{countryRegion}</li>
                     </ul>
 
             </div>

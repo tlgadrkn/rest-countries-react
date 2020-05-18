@@ -4,15 +4,17 @@
 }
 .searchBar input[type=text] {
     width: 15rem;
-    border: 2px solid #ccc;
+    border: none;
     border-radius: 5px;
     font-size: 16px;
     padding: 12px 20px 12px 40px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+
   }
   .searchBar input[type=text]:focus {
-    width: 100%;
+    width: 20rem;
   }
 
   .searchBar img {

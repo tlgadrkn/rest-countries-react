@@ -7,3 +7,11 @@ main {
     align-items: center;
     align-content: center;
 }
+
+
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        }
+  }

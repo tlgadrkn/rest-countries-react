@@ -14,6 +14,7 @@ const API_URL = "https://restcountries.eu/rest/v2/all";
 function App() {
 
 let [countries, setCountries] = useState([]);
+let [filteredCountries, setFilteredCountries] = useState([]);
 
 // Change this to cache to make less API Calls.
 useEffect(() => {
@@ -36,13 +37,22 @@ setCountries(tempCountries)
 }, [])
 
 
+function handleSearch(e) {
+  if (e.target.value === "") {
+    setCountries(tempCountries)
+  }
+     
+  console.log(e.target.value);
+  let filtered = countries.filter(country => country.name.toUpperCase().includes(e.target.value.toUpperCase()))
+  setCountries(filtered)  
+}
 
   return (
     <React.Fragment>
 
     <Navbar />
       <div className={styles.navBottom}>
-        <SearchCountry />
+        <SearchCountry handleSearch={handleSearch} />
         <FilterButton /> 
      </div>
     <Main  countriesToLoad={countries} />

@@ -3,6 +3,7 @@
     background-color: hsl(0, 0%, 98%);
     box-shadow:  0px 4px 8px 0 rgb(206, 205, 205);
     transition: 0.3s;
+    overflow: hidden;
 }
 
 .card:hover {
@@ -16,6 +17,7 @@
     width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    overflow: hidden;
 }
 
 .cardContainer {
@@ -23,8 +25,8 @@
 
 }
 
-.cardBody h2 {
-    padding:1rem  0rem;
+.cardContainer h3 {
+    padding:1rem 0rem;
 }
 
 .countryDetails {

@@ -13,9 +13,10 @@ return (
                             countryName={country.name} 
                             countryFlag={country.flag} 
                             countryPopulation={country.population}
-                            countrySubregion={country.subregion}
+                            countryRegion={country.region}
                             countryCapital={country.capital}
                             key={index}
+                            
                             />
                 })}
 
