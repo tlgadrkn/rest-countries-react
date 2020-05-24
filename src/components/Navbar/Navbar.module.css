@@ -6,18 +6,18 @@
   margin-bottom: 2vh;
  }
 
-  ul {
+  .navBar ul {
     display: flex; 
     list-style-type: none;
     justify-content: space-between;
 
   }
 
-  a{
+  .navBar a{
     text-decoration: none;
     color: #333;
   }
 
-  img {
+  .navBar img {
     height: 3vh;
   }

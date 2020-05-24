@@ -1,12 +1,16 @@
 import React from 'react'
 import styles from './Country.module.css'
+import CountryDetails from '../CountryDetails/CountryDetails';
 
-
-const Country = ({countryName, countryFlag, countryPopulation, countryRegion, countryCapital}) => {
+const Country = ({countryName, alpha2Code, countryFlag, countryPopulation, countryRegion, countryCapital, activateModal}) => {
+console.log(activateModal);
 
     return (
     <React.Fragment>
-        <a href="#">
+       
+       {activateModal.hasValue ? 
+        <p>ues</p>
+        :   <section id={alpha2Code} onClick={() => activateModal(alpha2Code)}>
         <div className={styles.card}>
                 <img src={countryFlag} alt={`${countryName} flag`}></img>
             <div className={styles.cardContainer}>
@@ -20,7 +24,11 @@ const Country = ({countryName, countryFlag, countryPopulation, countryRegion, co
             </div>
 
         </div>
-        </a>
+        </section>
+        }
+        
+      
+      
     </React.Fragment>
 )
 

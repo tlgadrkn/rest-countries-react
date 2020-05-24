@@ -6,6 +6,7 @@ import FilterButton from '../../components/FilterButton/FilterButton.js';
 import Country from '../Country/Country.js';
 import Main from '../Main/Main.js'
 import tempCountries from './tempCountries';
+import CountryDetails from '../CountryDetails/CountryDetails';
 
 const API_URL = "https://restcountries.eu/rest/v2/all";
 
@@ -51,7 +52,13 @@ function handleFilter(e) {
   setFilteredCountries(filteredCountries);
 
 }
-
+function handleDetailsRequest(childValue) {
+    let filteredCountry = filteredCountries.filter( country => country.alpha2Code === childValue)
+    filteredCountry.push({hasValue: true})
+    console.log(filteredCountry);
+    
+    return filteredCountry;
+}
   return (
     <React.Fragment>
 
@@ -60,8 +67,7 @@ function handleFilter(e) {
         <SearchCountry handleSearch={handleSearch} />
         <FilterButton handleFilter={handleFilter}/> 
      </div>
-    <Main  countriesToLoad={filteredCountries} />
-  
+    <Main activateModal={handleDetailsRequest}  countriesToLoad={filteredCountries} />
     </React.Fragment >
   );
 }
