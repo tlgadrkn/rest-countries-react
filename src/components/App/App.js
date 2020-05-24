@@ -16,7 +16,6 @@ function App() {
 let [countries, setCountries] = useState([]);
 let [filteredCountries, setFilteredCountries] = useState([]);
 
-// Change this to cache to make less API Calls.
 useEffect(() => {
 
   async function fetchData(urlToFetch) {
@@ -37,13 +36,20 @@ setCountries(tempCountries)
 }, [])
 
 function handleSearch(e) {
-  let filtered = countries.filter(country => country.name.toUpperCase().includes(e.target.value.toUpperCase()))
-  setCountries(filtered)  
-
   if (e.target.value.length === 0) {
     console.log(tempCountries);
     setCountries(tempCountries)
   }
+  let filtered = countries.filter(country => country.name.toUpperCase().includes(e.target.value.toUpperCase()))
+  setFilteredCountries(filtered)  
+}
+
+
+function handleFilter(e) {
+  console.log(e.target.textContent)
+  let filteredCountries = countries.filter( country => country.region.includes(e.target.textContent));
+  setFilteredCountries(filteredCountries);
+
 }
 
   return (
@@ -52,9 +58,9 @@ function handleSearch(e) {
     <Navbar />
       <div className={styles.navBottom}>
         <SearchCountry handleSearch={handleSearch} />
-        <FilterButton /> 
+        <FilterButton handleFilter={handleFilter}/> 
      </div>
-    <Main  countriesToLoad={countries} />
+    <Main  countriesToLoad={filteredCountries} />
   
     </React.Fragment >
   );

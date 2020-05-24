@@ -1,17 +1,21 @@
 import React from 'react';
 import styles from './FilterButton.module.css'
 
-const FilterButton = () => {
+const FilterButton = ( {handleFilter}) => {
+
+
     return (
         <div className={styles.filterContent}>
            
             <div className={styles.dropdown}>
             <button className={styles.dropbtn}>Filter By Region</button>
             <div className={styles.dropdownContent}>
-                <ul>
-                    <li>Link 1</li>
-                    <li>Link 1</li>
-                    <li>Link 1</li>
+                <ul onClick={handleFilter}>
+                    <li>Africa</li>
+                    <li>America</li>
+                    <li>Asia</li>
+                    <li>Europe</li>
+                    <li>Oceania</li>
                 </ul> 
             </div>
             </div>
