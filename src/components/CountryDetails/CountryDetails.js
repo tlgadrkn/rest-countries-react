@@ -2,16 +2,14 @@ import React from 'react';
 import styles from "./CountryDetails.module.css";
 import Turkey from "../App/countryTurkey";
 
-const CountryDetails =  ({countryName}) => {
+const CountryDetails =  ({details}) => {
     
     function handleClose() {
         document.querySelector('#countryModal').style.display = "none"
     }
 
-    console.log(countryName);
+    console.log(details[0].population);
     
-    const tempCountry = Turkey;
-
     return (
         <React.Fragment>
             <div id="countryModal" className={styles.modal}>
@@ -20,17 +18,17 @@ const CountryDetails =  ({countryName}) => {
 
 
                         <div className={styles.countryFlag}>
-                        <img src="q" />
+                        <img src={details[0].flag} alt={`${details[0].flag} flag`} />
 
                         </div>
 
                         <div>
-                        <h2>{countryName}</h2>
-                            <p>Native Name: {Turkey.nativeName}</p>
-                            <p>Population: {Turkey.population.toLocaleString()}</p>
-                            <p>Region: {Turkey.region}</p>
-                            <p>Sub Region: {Turkey.subRegion}</p>
-                            <p>Capital: {Turkey.capital}</p>
+                        <h2>{details[0].countryName}</h2>
+                            <p>Native Name: {details[0].nativeName}</p>
+                            <p>Population: {details[0].population.toLocaleString()}</p>
+                            <p>Region: {details[0].region}</p>
+                            <p>Sub Region: {details[0].subRegion}</p>
+                            <p>Capital: {details[0].capital}</p>
                             <p></p>
 
                             <div className={styles.borderCountries}>
@@ -41,9 +39,9 @@ const CountryDetails =  ({countryName}) => {
                     </div>
                         </div>
                         <div>
-                            <p>Top Level Domain: {Turkey.topLevelDomain}</p>
-                            <p>Currency: {Turkey.topLevelDomain}</p>
-                            <p>Languages: {Turkey.topLevelDomain}</p>
+                            <p>Top Level Domain: {details[0].topLevelDomain}</p>
+                            <p>Currency: {details[0].topLevelDomain}</p>
+                            <p>Languages: {details[0].topLevelDomain}</p>
 
                         </div>
                          

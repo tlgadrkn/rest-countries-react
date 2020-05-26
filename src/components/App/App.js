@@ -10,12 +10,16 @@ import CountryDetails from '../CountryDetails/CountryDetails';
 
 const API_URL = "https://restcountries.eu/rest/v2/all";
 
-
+// ADD PROPTYPES
+// ADD CONTEXT API
+// ADD UTILITIES FOLDER TO STORE HELPER FUNCTIONS
 
 function App() {
 
 let [countries, setCountries] = useState([]);
 let [filteredCountries, setFilteredCountries] = useState([]);
+let [modalIsActive, setModalIsActive] = useState(false);
+let [selectedCountry, setSelectedCountry] = useState([]);
 
 useEffect(() => {
 
@@ -34,6 +38,8 @@ useEffect(() => {
 
 //to lower api calls for now using temp values which were retrieved from api call. 
 setCountries(tempCountries)
+setFilteredCountries(tempCountries)
+
 }, [])
 
 function handleSearch(e) {
@@ -44,20 +50,16 @@ function handleSearch(e) {
   let filtered = countries.filter(country => country.name.toUpperCase().includes(e.target.value.toUpperCase()))
   setFilteredCountries(filtered)  
 }
-
-
 function handleFilter(e) {
   console.log(e.target.textContent)
   let filteredCountries = countries.filter( country => country.region.includes(e.target.textContent));
   setFilteredCountries(filteredCountries);
 
 }
-function handleDetailsRequest(childValue) {
-    let filteredCountry = filteredCountries.filter( country => country.alpha2Code === childValue)
-    filteredCountry.push({hasValue: true})
-    console.log(filteredCountry);
-    
-    return filteredCountry;
+const getClickedCountryInformation = elementId => {
+  setSelectedCountry(countries.filter( country => country.alpha2Code === elementId))
+  setModalIsActive(true)
+
 }
   return (
     <React.Fragment>
@@ -67,7 +69,14 @@ function handleDetailsRequest(childValue) {
         <SearchCountry handleSearch={handleSearch} />
         <FilterButton handleFilter={handleFilter}/> 
      </div>
-    <Main activateModal={handleDetailsRequest}  countriesToLoad={filteredCountries} />
+    {modalIsActive ? 
+     <CountryDetails 
+     details={selectedCountry}/>
+     :
+    <Main 
+    countriesToLoad={filteredCountries}
+    getClickedCountriesId={getClickedCountryInformation}    
+    />}
     </React.Fragment >
   );
 }
