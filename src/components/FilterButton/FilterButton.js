@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import styles from './FilterButton.module.css'
+import { CountryContext } from '../../GlobalState';
 
-const FilterButton = ( {handleFilter}) => {
+const FilterButton = () => {
+const { dispatch } = useContext(CountryContext)
 
 
     return (
@@ -10,7 +12,8 @@ const FilterButton = ( {handleFilter}) => {
             <div className={styles.dropdown}>
             <button className={styles.dropbtn}>Filter By Region</button>
             <div className={styles.dropdownContent}>
-                <ul onClick={handleFilter}>
+                <ul onClick={(e) => dispatch({ type: 'FILTER_COUNTRY', region: e.target.value})}>
+                    <li>All</li>
                     <li>Africa</li>
                     <li>America</li>
                     <li>Asia</li>

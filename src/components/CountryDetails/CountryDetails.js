@@ -1,14 +1,11 @@
 import React from 'react';
 import styles from "./CountryDetails.module.css";
-import Turkey from "../App/countryTurkey";
 
 const CountryDetails =  ({details}) => {
     
     function handleClose() {
         document.querySelector('#countryModal').style.display = "none"
     }
-
-    console.log(details[0].population);
     
     return (
         <React.Fragment>
