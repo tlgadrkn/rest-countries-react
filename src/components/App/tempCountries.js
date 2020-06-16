@@ -1,6 +1,4 @@
-let tempCountries = [];
-
-export default  tempCountries = [
+ const tempCountries = [
     {
     name: "Afghanistan",
     topLevelDomain: [
@@ -19592,3 +19590,5 @@ export default  tempCountries = [
     cioc: "ZIM"
     }
     ]
+
+    export default tempCountries;

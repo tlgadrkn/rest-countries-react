@@ -1,15 +1,15 @@
-import tempCountries from '../components/App/tempCountries';
+import  tempCountries   from "../components/App/tempCountries";
+const initialState = tempCountries;
 
 export const countryReducer =  (state, action) => {
     switch(action.type) {
         case "SEARCH_COUNTRY": 
-        let tempState = [...state];
-        return tempState.filter( country => {  return country.name.toUpperCase().includes(action.name.toUpperCase())
-        })    
-          case "FILTER_COUNTRY":
-           
-          let filtered = state.filter( country => country.region.includes(action.region));
-          return filtered
+            return initialState.filter( country => country.name.toUpperCase().includes(action.name.toUpperCase()))        
+        case "FILTER_COUNTRY":
+            if (action.region === "All") {
+                return initialState;
+            }
+            return  initialState.filter( country => country.region.toUpperCase().includes(action.region.toUpperCase()))
         default:
             return state;
     }

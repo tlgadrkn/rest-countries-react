@@ -1,17 +1,17 @@
-import React, { createContext, useReducer, useEffect } from 'react';
-import tempCountries from './components/App/tempCountries';
+import React, { createContext, useReducer, useEffect,useState } from 'react';
+import  tempCountries  from './components/App/tempCountries';
 import { countryReducer } from './components/countryReducer';
 
 export const CountryContext = createContext();
-export const CountryContextProvider =  ( { children }) => {
-const [state, dispatch] = useReducer(countryReducer, tempCountries);
 
+export const CountryContextProvider =  ( { children }) => {
+    const [countries, dispatch] = useReducer(countryReducer, tempCountries)
     return (
         <CountryContext.Provider value={ {
-            state,
+            countries,
             dispatch
         } }>
-            { children }
+            {  children }
         </CountryContext.Provider>
         
         )

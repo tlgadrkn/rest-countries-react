@@ -4,11 +4,12 @@ import { CountryContext } from '../../GlobalState'
 import styles from './Main.module.css';
 
 const Main = ( ) => {
-const { state } = useContext(CountryContext);
-return state.length ? (
+const { countries } = useContext(CountryContext);
+
+return countries.length ? (
     <React.Fragment>
         <main>
-                {state.map( (country, index) => {
+                {countries.map( (country, index) => {
                     return < Country 
                             alpha2Code={country.alpha2Code}
                             countryName={country.name} 
