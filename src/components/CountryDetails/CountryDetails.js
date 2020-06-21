@@ -1,57 +1,65 @@
-import React from 'react';
+import React from "react";
 import styles from "./CountryDetails.module.css";
+import { Link } from "react-router-dom";
+import { useParams, useHistory, useLocation } from "react-router";
 
-const CountryDetails =  ({details}) => {
-    
-    function handleClose() {
-        document.querySelector('#countryModal').style.display = "none"
-    }
-    
-    return (
-        <React.Fragment>
-            <div id="countryModal" className={styles.modal}>
-                <div className={styles.modalContent}>
-                <span onClick={handleClose} className={styles.close}>&times;</span>
+const CountryDetails = () => {
+  let { code } = useParams();
+  const history = useHistory();
+  const location = useLocation();
+  console.log(history);
+  console.log(location.state);
 
+  return (
+    <React.Fragment>
+      <div>HEY FROM {code}</div>
+      <div id="countryModal" className={styles.modal}>
+        <div className={styles.modalContent}>
+          <div className={styles.countryFlag}>
+            <img
+              src={location.state.countryFlag}
+              alt={`${location.state.countryFlag} flag`}
+            />
+          </div>
 
-                        <div className={styles.countryFlag}>
-                        <img src={details[0].flag} alt={`${details[0].flag} flag`} />
+          <div>
+            <h2>{location.state.countryName}</h2>
+            <p>Native Name: {location.state.nativeName}</p>
+            <p>
+              Population: {location.state.countryPopulation.toLocaleString()}
+            </p>
+            <p>Region: {location.state.countryRegion}</p>
+            <p>Sub Region: {location.state.subregion}</p>
+            <p>Capital: {location.state.countryCapital}</p>
+            <p></p>
 
-                        </div>
-
-                        <div>
-                        <h2>{details[0].countryName}</h2>
-                            <p>Native Name: {details[0].nativeName}</p>
-                            <p>Population: {details[0].population.toLocaleString()}</p>
-                            <p>Region: {details[0].region}</p>
-                            <p>Sub Region: {details[0].subRegion}</p>
-                            <p>Capital: {details[0].capital}</p>
-                            <p></p>
-
-                            <div className={styles.borderCountries}>
-                            <span>Border Countries</span>
-                        <ul>
-                            <li>Azerbaijan</li> 
-                        </ul>
-                    </div>
-                        </div>
-                        <div>
-                            <p>Top Level Domain: {details[0].topLevelDomain}</p>
-                            <p>Currency: {details[0].topLevelDomain}</p>
-                            <p>Languages: {details[0].topLevelDomain}</p>
-
-                        </div>
-                         
-                </div>
-              
+            <div className={styles.borderCountries}>
+              <span>Border Countries</span>
+              <ul>
+                {location.state.borders.map((borderCountry, index) => {
+                  return <li key={index}><Link to={borderCountry}>{borderCountry}</Link></li>
+                })}
+              </ul>
             </div>
-
-
-        </React.Fragment>
-       
-      
-    )
-}
-
+          </div>
+          <div>
+            <p>Top Level Domain: {location.state.topLevelDomain}</p>
+            <span></span>
+            <p>Currency: {
+                location.state.currencies.map( (currency, index) => {
+                return <span key={index}>{currency.name}</span>
+                } )    
+            }</p>
+            <p>Languages: {
+                location.state.languages.map( (language, index) => {
+                    return <span key={index}>{language.name}</span>
+                } )
+                } </p>
+          </div>
+        </div>
+      </div>
+    </React.Fragment>
+  );
+};
 
 export default CountryDetails;
