@@ -7,32 +7,30 @@
 }
 
 .card:hover {
-    box-shadow: 0 8px 24px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 2px 20px 0 rgba(0,0,0,0.2);
 }
 
 
 
-.card img {
+.cardHeader img {
     height: 10rem;
     width: 100%;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    object-fit: cover;
     overflow: hidden;
 }
 
-.cardContainer {
-    padding: 1rem 2rem;
-
+.cardBody {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 15rem;
 }
 
-.cardContainer h3 {
+.cardBody h3 {
     padding:1rem 0rem;
 }
 
-.countryDetails {
-    display: flex;
-    flex-direction: column;
-}
-.countryDetails li{
+.cardBody li{
     padding: 0.2rem 0;
 }

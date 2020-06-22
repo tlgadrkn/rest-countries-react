@@ -1,26 +1,27 @@
-    .modalContent {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: center;
-    background-color: #fefefe;
-    margin: 15% auto; 
-    padding: 2rem;
-    border: 5px solid #888;
-    height: 40rem;
-}
-.modalContent .countryFlag {
-    width: 30vw;
-    min-width: 25rem;
-    min-height: 20rem;
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
-  .modalContent .countryFlag img {
-    width: 100%;
+.card {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  background-color: #fefefe;
+  border: 1px solid #888;
+  height: 40rem;
+}
+.card .cardHeader {
+  width: 50%;
 }
 
-  /* .modalContent .countryDetails {
+.card .cardHeader img {
+  width: 100%;
+}
+
+/* .modalContent .countryDetails {
       padding: 3rem 0;
       display: flex;
       flex-wrap: wrap;
@@ -29,26 +30,10 @@
      flex: 1 1 100%;
 
   } */
- 
-  .modalContent .borderCountries {
-      display: flex ;
-      align-self: flex-end;
-      border: 1px solid black;
-      margin-top: 3rem;
+
+.card .borderCountries {
+  display: flex;
+  /* align-self: flex-end; */
+  border: 1px solid black;
+  margin-top: 3rem;
 }
-  
-  /* The Close Button */
-  .close {
-    position: absolute;
-    align-self: flex-start;
-    color: #aaa;
-    font-size: 2rem;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }

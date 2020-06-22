@@ -15,6 +15,7 @@ const Country = ({
   currencies,
   languages
 }) => {
+console.log(countryName);
 
   // to={{
   //   pathname: "/courses",
@@ -45,10 +46,12 @@ const Country = ({
           id={alpha2Code}
         >
           <div className={styles.card}>
+            <div className={styles.cardHeader}>
             <img src={countryFlag} alt={`${countryName} flag`}></img>
-            <div className={styles.cardContainer}>
+            </div>
+            <div className={styles.cardBody}>
               <h3>{countryName}</h3>
-              <ul className={styles.countryDetails}>
+              <ul>
                 <li>
                   <strong>Population: </strong>
                   {countryPopulation.toLocaleString()}

@@ -10,8 +10,9 @@ main {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 940px) {
     main {
         grid-template-columns: 1fr;
+        justify-items: center;
         }
   }
