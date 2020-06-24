@@ -3,7 +3,7 @@ import styles from "./FilterButton.module.css";
 import { CountryContext } from "../../GlobalState";
 
 const FilterButton = () => {
-  const { dispatch, filterCountries } = useContext(CountryContext);
+  const { dispatch } = useContext(CountryContext);
 
   return (
     <div className={styles.filterContent}>

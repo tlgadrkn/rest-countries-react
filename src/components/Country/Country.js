@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import styles from "./Country.module.css";
 import { Link } from "react-router-dom";
 const Country = ({
@@ -13,10 +13,8 @@ const Country = ({
   subregion,
   borders,
   currencies,
-  languages
+  languages,
 }) => {
-console.log(countryName);
-
   // to={{
   //   pathname: "/courses",
   //   search: "?sort=name",
@@ -25,29 +23,29 @@ console.log(countryName);
   // }}
   return (
     <React.Fragment>
-      <Link to={{
-        pathname: `/${alpha2Code}`,
-        state: {
-          alpha2Code,
-          countryFlag,
-          countryName,
-          countryPopulation,
-          countryRegion,
-          countryCapital,
-          topLevelDomain,
-          nativeName,
-          subregion,
-          borders,
-          currencies,
-          languages
-        }
-      }}>
-        <section
-          id={alpha2Code}
-        >
+      <Link
+        to={{
+          pathname: `/${alpha2Code}`,
+          state: {
+            alpha2Code,
+            countryFlag,
+            countryName,
+            countryPopulation,
+            countryRegion,
+            countryCapital,
+            topLevelDomain,
+            nativeName,
+            subregion,
+            borders,
+            currencies,
+            languages,
+          },
+        }}
+      >
+        <section id={alpha2Code}>
           <div className={styles.card}>
             <div className={styles.cardHeader}>
-            <img src={countryFlag} alt={`${countryName} flag`}></img>
+              <img src={countryFlag} alt={`${countryName} flag`}></img>
             </div>
             <div className={styles.cardBody}>
               <h3>{countryName}</h3>
