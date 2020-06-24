@@ -21,8 +21,6 @@ export const countryReducer = (state, action) => {
           .toUpperCase()
           .includes(action.region.toUpperCase());
       });
-    case "LOAD_STATE":
-      return initialState;
     default:
       return initialState;
   }

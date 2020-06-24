@@ -2,38 +2,64 @@
   max-width: 1440px;
   margin: 0 auto;
 }
+button {
+  background-color: inherit;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
 
+}
+button:hover {
+  background-color: #f1f1f1;
+}
 .card {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-items: center;
   align-content: center;
-  background-color: #fefefe;
-  border: 1px solid #888;
-  height: 40rem;
+  /* background-color: #fefefe; */
+  /* border: 1px solid #888; */
 }
 .card .cardHeader {
-  width: 50%;
+  width: 40vw;
 }
 
 .card .cardHeader img {
   width: 100%;
 }
 
-/* .modalContent .countryDetails {
-      padding: 3rem 0;
+ .cardDetails {
+      /* padding: 3rem 0; */
+      /* height: 50vh; */
       display: flex;
       flex-wrap: wrap;
-      flex-direction: column;
-     border: 5px solid red;
-     flex: 1 1 100%;
+  }
 
-  } */
+  .card .left {
+  }
+  .card .right {
+  }
 
-.card .borderCountries {
-  display: flex;
-  /* align-self: flex-end; */
-  border: 1px solid black;
-  margin-top: 3rem;
+ .borderCountries {
+   align-items: flex-end;
+  align-self: flex-end;
+  margin-top: 8rem;
+  margin-right:auto;
 }
+
+ .borderCountries ul {
+  display: flex;
+}
+ .borderCountries ul li {
+  padding-top: 0.5rem;
+}
+ .borderCountries ul li a{
+    margin: 0.2rem;
+    padding: 0.3rem 1rem;
+    box-shadow: 0 2px 3px rgba(0,0,0, 0.2);
+
+}
+
