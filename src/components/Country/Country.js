@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Country.module.css";
 import { Link } from "react-router-dom";
+import { CountryContext } from "../../GlobalState";
+
 const Country = ({
   alpha2Code,
   countryFlag,
@@ -14,13 +16,7 @@ const Country = ({
   borders,
   currencies,
   languages,
-}) => {
-  // to={{
-  //   pathname: "/courses",
-  //   search: "?sort=name",
-  //   hash: "#the-hash",
-  //   state: { fromDashboard: true }
-  // }}
+}) => {  
   return (
     <React.Fragment>
       <Link

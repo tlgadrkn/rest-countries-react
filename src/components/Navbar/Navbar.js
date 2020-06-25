@@ -1,17 +1,19 @@
 import React from 'react';
 import styles from './Navbar.module.css';
 import moonIcon from '../../assets/icons/moon-outline.svg'
-
+import {Link} from 'react-router-dom';
+import { useHistory } from 'react-router';
 const Navbar = () =>{
+  const history = useHistory();
 
     return (
         <React.Fragment>
         <nav className={styles.navBar}>
             <ul>
               <li>
-                    <a href="#home">
+                    <Link onClick={() => history.push('/')}>
                         Where in the world?  
-                    </a>  
+                    </Link>  
               </li>
                   
               <li> 
