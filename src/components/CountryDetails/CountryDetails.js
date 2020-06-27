@@ -1,18 +1,15 @@
-import React, { useContext }from "react";
+import React, { useContext } from "react";
 import styles from "./CountryDetails.module.css";
 import { Link } from "react-router-dom";
 import { useParams, useHistory, useLocation } from "react-router";
-import { CountryContext } from '../../GlobalState';
 import Navbar from "../../components/Navbar/Navbar";
+import { getSpecificCountryFromLocalStorage } from "../../utils/helperFunctions";
 
 const CountryDetails = () => {
   let { code } = useParams();
   const history = useHistory();
-  const location = useLocation();
-  console.log(history);
-  console.log(location.state);
-  
-  const { dispatch } = useContext(CountryContext);
+  // const location = useLocation();
+  let countryData = getSpecificCountryFromLocalStorage("countries", code)[0];
 
   return (
     <React.Fragment>
@@ -25,50 +22,47 @@ const CountryDetails = () => {
 
           <div className={styles.card}>
             <div className={styles.cardHeader}>
-              <img
-                src={location.state.countryFlag}
-                alt={`${location.state.countryFlag} flag`}
-              />
+              <img src={countryData.flag} alt={`${countryData.flag} flag`} />
             </div>
             <div className={styles.cardDetails}>
               <div className={styles.left}>
-                <h2>{location.state.countryName}</h2>
+                <h2>{countryData.name}</h2>
                 <p>
                   <strong>Native Name: </strong>
-                  {location.state.nativeName}
+                  {countryData.nativeName}
                 </p>
                 <p>
                   <strong>Population: </strong>
-                  {location.state.countryPopulation.toLocaleString()}
+                  {countryData.population.toLocaleString()}
                 </p>
                 <p>
                   <strong>Region: </strong>
-                  {location.state.countryRegion}
+                  {countryData.region}
                 </p>
                 <p>
                   <strong>Sub Region: </strong>
-                  {location.state.subregion}
+                  {countryData.subregion}
                 </p>
                 <p>
                   <strong>Capital: </strong>
-                  {location.state.countryCapital}
+                  {countryData.capital}
                 </p>
               </div>
               <div className={styles.right}>
                 <p>
                   <strong>Top Level Domain: </strong>
-                  {location.state.topLevelDomain}
+                  {countryData.topLevelDomain}
                 </p>
                 <span></span>
                 <p>
                   <strong>Currency: </strong>{" "}
-                  {location.state.currencies.map((currency, index) => {
+                  {countryData.currencies.map((currency, index) => {
                     return <span key={index}>{currency.name}</span>;
                   })}
                 </p>
                 <p>
                   <strong>Languages: </strong>{" "}
-                  {location.state.languages.map((language, index) => {
+                  {countryData.languages.map((language, index) => {
                     return <span key={index}>{language.name}</span>;
                   })}{" "}
                 </p>
@@ -79,10 +73,10 @@ const CountryDetails = () => {
                   <strong>Border Countries: </strong>
                 </span>
                 <ul>
-                  {location.state.borders.map((borderCountry, index) => {
+                  {countryData.borders.map((borderCountry, index) => {
                     return (
                       <li key={index}>
-                        <Link onClick={() => dispatch({type: "SEARCH_COUNTRY_BY_CODE", alpha2Code: borderCountry})} to={borderCountry}>{borderCountry}</Link>
+                        <Link to={borderCountry}>{borderCountry}</Link>
                       </li>
                     );
                   })}

@@ -5,15 +5,13 @@ import styles from "./Main.module.css";
 
 const Main = () => {
   const { countries } = useContext(CountryContext);
-console.log(countries);
-
   return countries ? (
     <React.Fragment>
       <main>
         {countries.map((country, index) => {
           return (
             <Country
-              alpha2Code={country.alpha2Code}
+              alpha3Code={country.alpha3Code}
               countryName={country.name}
               countryFlag={country.flag}
               countryPopulation={country.population}

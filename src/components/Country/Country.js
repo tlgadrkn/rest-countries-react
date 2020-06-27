@@ -1,44 +1,22 @@
 import React, { useContext } from "react";
 import styles from "./Country.module.css";
 import { Link } from "react-router-dom";
-import { CountryContext } from "../../GlobalState";
 
 const Country = ({
-  alpha2Code,
+  alpha3Code,
   countryFlag,
   countryName,
   countryPopulation,
   countryRegion,
   countryCapital,
-  topLevelDomain,
-  nativeName,
-  subregion,
-  borders,
-  currencies,
-  languages,
-}) => {  
+}) => {
   return (
     <React.Fragment>
-      <Link
-        to={{
-          pathname: `/${alpha2Code}`,
-          state: {
-            alpha2Code,
-            countryFlag,
-            countryName,
-            countryPopulation,
-            countryRegion,
-            countryCapital,
-            topLevelDomain,
-            nativeName,
-            subregion,
-            borders,
-            currencies,
-            languages,
-          },
+      <Link to={{
+          pathname: `/${alpha3Code}`,
         }}
       >
-        <section id={alpha2Code}>
+        <section id={alpha3Code}>
           <div className={styles.card}>
             <div className={styles.cardHeader}>
               <img src={countryFlag} alt={`${countryName} flag`}></img>

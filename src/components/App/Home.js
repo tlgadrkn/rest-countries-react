@@ -13,7 +13,7 @@ const Home = () => {
         <SearchCountry />
         <FilterButton />
       </div>
-      <Main  />
+      <Main />
     </React.Fragment>
   );
 };

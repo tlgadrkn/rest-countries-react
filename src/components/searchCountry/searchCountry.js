@@ -8,15 +8,15 @@ const SearchCountry = () => {
   return (
     <React.Fragment>
       <div className={styles.searchBar}>
-        <form>
+        <form onSubmit={e => e.preventDefault()}>
           <span>
             {" "}
             <img src={searchIcon} alt="seach bar icon" />{" "}
           </span>
           <input
-            onChange={(e) =>
+            onChange={(e) =>{ 
               dispatch({ type: "SEARCH_COUNTRY", name: e.target.value })
-            }
+            }}
             style={styles}
             type="text"
             name="search"

@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { CountryContextProvider, CountryContext } from "../../GlobalState";
+import { CountryContextProvider } from "../../GlobalState";
 import styles from "./App.module.css";
 import CountryDetails from "../CountryDetails/CountryDetails";
 import Home from "./Home";

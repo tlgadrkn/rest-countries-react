@@ -11,15 +11,6 @@ export const countryReducer = (state, action) => {
       return JSON.parse(searchedData).filter((country) => {
         return country.name.toUpperCase().includes(action.name.toUpperCase());
       });
-      case "SEARCH_COUNTRY_BY_CODE":
-        let countries = localStorage.getItem("countries");
-        console.log(JSON.parse(countries).filter( country => {
-          return country.alpha2Code.includes(action.alpha2Code);
-        }));
-        
-      return JSON.parse(countries).filter( country => {
-        return country.alpha2Code.includes(action.alpha2Code);
-      })
     case "FILTER_COUNTRY":
       if (action.region === "All") {
         return initialState;

@@ -11,7 +11,7 @@ const Navbar = () =>{
         <nav className={styles.navBar}>
             <ul>
               <li>
-                    <Link onClick={() => history.push('/')}>
+                    <Link to={'/'} onClick={() => history.push('/')}>
                         Where in the world?  
                     </Link>  
               </li>
