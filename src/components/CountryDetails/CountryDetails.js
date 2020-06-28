@@ -1,23 +1,27 @@
 import React, { useContext } from "react";
 import styles from "./CountryDetails.module.css";
+import arrowIcon from '../../assets/icons/arrow-back-outline.svg'
 import { Link } from "react-router-dom";
 import { useParams, useHistory, useLocation } from "react-router";
 import Navbar from "../../components/Navbar/Navbar";
-import { getSpecificCountryFromLocalStorage } from "../../utils/helperFunctions";
+import { getSpecificCountryFromLocalStorage, getBorderCountryName } from "../../utils/helperFunctions";
 
 const CountryDetails = () => {
   let { code } = useParams();
   const history = useHistory();
   // const location = useLocation();
   let countryData = getSpecificCountryFromLocalStorage("countries", code)[0];
-
+  const borderCountriesName = getBorderCountryName(countryData.borders);
+  console.log(borderCountriesName);
+  
   return (
     <React.Fragment>
       <Navbar />
       <section>
         <div className={styles.container}>
-          <button type="button" onClick={() => history.push("/")}>
-            Go Back
+          <button className={styles.countryDetailsButton} type="button" onClick={() => history.push("/")}>
+            <img src={arrowIcon} alt="arrow icon left"></img>
+            Back
           </button>
 
           <div className={styles.card}>
@@ -73,7 +77,7 @@ const CountryDetails = () => {
                   <strong>Border Countries: </strong>
                 </span>
                 <ul>
-                  {countryData.borders.map((borderCountry, index) => {
+                  {borderCountriesName.map((borderCountry, index) => {
                     return (
                       <li key={index}>
                         <Link to={borderCountry}>{borderCountry}</Link>
