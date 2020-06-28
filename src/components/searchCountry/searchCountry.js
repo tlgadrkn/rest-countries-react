@@ -20,7 +20,7 @@ const SearchCountry = () => {
             style={styles}
             type="text"
             name="search"
-            placeholder={`Search for a country`}
+            placeholder={`Search for a country...`}
           />
         </form>
       </div>

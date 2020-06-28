@@ -12,8 +12,6 @@ const CountryDetails = () => {
   // const location = useLocation();
   let countryData = getSpecificCountryFromLocalStorage("countries", code)[0];
   const borderCountriesName = getBorderCountryName(countryData.borders);
-  console.log(borderCountriesName);
-  
   return (
     <React.Fragment>
       <Navbar />

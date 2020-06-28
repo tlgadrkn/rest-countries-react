@@ -1,23 +1,29 @@
 .navBar {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   height: 10vh;
   padding: 3rem;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1.2vmin);
   box-shadow: 0px 2px  rgb(214, 214, 214);
   margin-bottom: 2vh;
  }
+ .navBar a{
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
 
-  .navBar ul {
-    display: flex; 
-    list-style-type: none;
-    justify-content: space-between;
+.themeSwitcher a{
+  font-size: 1.2rem; 
+  font-weight: 400;
+  text-decoration: none;
+}
 
-  }
-
-  .navBar a{
-    text-decoration: none;
-    color: #333;
-  }
-
-  .navBar img {
-    height: 3vh;
-  }
+.themeSwitcher img {
+  height: 1rem;
+  padding-right: 0.5rem;
+}

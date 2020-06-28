@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import styles from "./FilterButton.module.css";
+import arrowDownSvg from "../../assets/icons/arrow-down-outline.svg";
 import { CountryContext } from "../../GlobalState";
 
 const FilterButton = () => {
@@ -8,7 +9,9 @@ const FilterButton = () => {
   return (
     <div className={styles.filterContent}>
       <div className={styles.dropdown}>
-        <button className={styles.dropbtn}>Filter By Region</button>
+        <button className={styles.dropbtn}>
+          Filter by Region <img src={arrowDownSvg} alt="arrow down icon"></img>
+        </button>
         <div className={styles.dropdownContent}>
           <ul
             onClick={(e) =>
