@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styles from "../searchCountry/searchCountry.module.css";
 import searchIcon from "../../assets/icons/search-outline.svg";
-import { CountryContext } from "../../GlobalState";
+import { CountryContext } from "../../context/GlobalState";
 
 const SearchCountry = () => {
   const { dispatch } = useContext(CountryContext);

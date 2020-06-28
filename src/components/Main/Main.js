@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Country from "../Country/Country.js";
-import { CountryContext } from "../../GlobalState";
+import { CountryContext } from "../../context/GlobalState";
 import styles from "./Main.module.css";
 
 const Main = () => {

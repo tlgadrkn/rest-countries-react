@@ -1,23 +1,37 @@
 import React, { useContext } from "react";
 import styles from "./CountryDetails.module.css";
-import arrowIcon from '../../assets/icons/arrow-back-outline.svg'
+import arrowIcon from "../../assets/icons/arrow-back-outline.svg";
 import { Link } from "react-router-dom";
-import { useParams, useHistory, useLocation } from "react-router";
+import { useParams, useHistory, useLocation, Redirect } from "react-router";
 import Navbar from "../../components/Navbar/Navbar";
-import { getSpecificCountryFromLocalStorage, getBorderCountryName } from "../../utils/helperFunctions";
+import {
+  getSpecificCountryFromLocalStorage,
+  getFilteredBorderCountries,
+} from "../../utils/helperFunctions";
 
 const CountryDetails = () => {
   let { code } = useParams();
   const history = useHistory();
   // const location = useLocation();
+
+  if (code.length < 3) {
+    return <Redirect to={"/"} />;
+  }
+
   let countryData = getSpecificCountryFromLocalStorage("countries", code)[0];
-  const borderCountriesName = getBorderCountryName(countryData.borders);
+  const filteredBorderCountries = getFilteredBorderCountries(
+    countryData.borders
+  );
   return (
     <React.Fragment>
       <Navbar />
       <section>
         <div className={styles.container}>
-          <button className={styles.countryDetailsButton} type="button" onClick={() => history.push("/")}>
+          <button
+            className={styles.countryDetailsButton}
+            type="button"
+            onClick={() => history.push("/")}
+          >
             <img src={arrowIcon} alt="arrow icon left"></img>
             Back
           </button>
@@ -75,10 +89,12 @@ const CountryDetails = () => {
                   <strong>Border Countries: </strong>
                 </span>
                 <ul>
-                  {borderCountriesName.map((borderCountry, index) => {
+                  {filteredBorderCountries.map((borderCountry, index) => {
                     return (
                       <li key={index}>
-                        <Link to={borderCountry}>{borderCountry}</Link>
+                        <Link to={borderCountry.countryCode}>
+                          {borderCountry.countryName}
+                        </Link>
                       </li>
                     );
                   })}

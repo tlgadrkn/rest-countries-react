@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { CountryContextProvider } from "../../GlobalState";
+import { CountryContextProvider } from '../../context/GlobalState'
 import styles from "./App.module.css";
 import CountryDetails from "../CountryDetails/CountryDetails";
 import Home from "./Home";
 // ADD PROPTYPES
+// CREATE 404 NOT FOUND PAGE TO REDIRECT BACK TO HOME
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
                 path={"/"}
                 render={() => <div>404 page not found</div>}
               ></Route>
+              
             </Switch>
           </CountryContextProvider>
         </>

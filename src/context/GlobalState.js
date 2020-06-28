@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useEffect } from "react";
-import tempCountries from "./components/App/tempCountries";
-import { countryReducer } from "./components/countryReducer";
+import tempCountries from "../components/App/tempCountries";
+import { countryReducer } from "../context/countryReducer";
 // import fetchData from "./utils/fetchApi";
 // const API_URL = "https://restcountries.eu/rest/v2/all";
 

@@ -9,13 +9,16 @@ export const getSpecificCountryFromLocalStorage = (key, filter) => {
   );
 };
 
-export function getBorderCountryName(countryBorders) {
+export function getFilteredBorderCountries(countryBorders) {
   let allCountries = getDataFromLocalStorage();
   let filteredCountryNames = [];
   for (let countryCode of countryBorders) {
     for (let country of allCountries) {
       if (countryCode === country.alpha3Code) {
-        filteredCountryNames.push(country.name);
+        filteredCountryNames.push({
+          countryName: country.name,
+          countryCode: country.alpha3Code,
+        });
       }
     }
   }

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./FilterButton.module.css";
 import arrowDownSvg from "../../assets/icons/arrow-down-outline.svg";
-import { CountryContext } from "../../GlobalState";
+import { CountryContext } from "../../context/GlobalState";
 
 const FilterButton = () => {
   const { dispatch } = useContext(CountryContext);
