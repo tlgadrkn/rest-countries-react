@@ -3,7 +3,6 @@ import styles from './Navbar.module.css';
 import moonIcon from '../../assets/icons/moon-outline.svg';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
-import { themeReducer } from '../../reducers/themeReducer';
 import { ThemeContext } from '../../context/ThemeState';
 const Navbar = () => {
   const { themeValue, dispatch } = React.useContext(ThemeContext);

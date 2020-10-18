@@ -1,9 +1,8 @@
-@import '../../globalStyles.css';
-
 .card {
   background-color: var(--elements-primary);
   border-radius: 5px;
-  /* box-shadow: 0px 4px 8px 0 rgb(206, 205, 205); */
+  /* UPDATE BOX SHADOW */
+  /* box-shadow: 0px 4px 8px 0 var(--text-primary); */
   transition: 0.3s;
   overflow: hidden;
 }
