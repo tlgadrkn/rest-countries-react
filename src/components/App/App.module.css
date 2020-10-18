@@ -1,29 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 
-:root {
-  --lightModeBackground: hsl(0, 0%, 98%);
-  --lightModeText:  hsl(200, 15%, 8%);
-  --lightModeInput: hsl(0, 0%, 52%);
-  --darkModeBackground: hsl(207, 26%, 17%);
-}
+@import '../../globalStyles.css';
 
 * {
+  box-sizing: border-box !important;
   margin: 0;
   padding: 0;
-  box-sizing: border-box !important;
 }
 
 body {
-  max-width: 1440px;
   margin: 0 auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  color: var(--text-primary) !important;
   font-size: 16px;
   font-family: 'Nunito Sans', sans-serif;
-  background-color: var(--lightModeBackground);
 }
+
 .App {
-  background-color: hsl(0, 0%, 98%);
   display: flex;
-  font-size: calc(10px + 2vmin);   
+  font-size: calc(10px + 2vmin);
 }
 
 .container {
@@ -33,9 +30,9 @@ body {
 }
 
 .navBottom {
-    display: flex;
-    justify-content: space-between;
-    margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0;
 }
 
 li {
@@ -43,16 +40,13 @@ li {
 }
 
 a {
+  color: var(--text-primary) !important;
   text-decoration: none;
-  color: #333;
-
 }
-
 
 @media (max-width: 768px) {
   .App {
     display: flex;
     flex-direction: column;
   }
-  
 }

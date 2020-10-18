@@ -1,0 +1,11 @@
+:root {
+  --bg-primary: hsl(0, 0%, 98%);
+  --text-primary: hsl(200, 15%, 8%);
+  --elements-primary: hsl(0, 0%, 100%);
+}
+
+.dark:root {
+  --bg-primary: hsl(207, 26%, 17%);
+  --text-primary: hsl(0, 0%, 100%);
+  --elements-primary: hsl(209, 23%, 22%);
+}
