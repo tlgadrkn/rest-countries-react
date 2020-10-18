@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
-import Country from "../Country/Country.js";
-import { CountryContext } from "../../context/GlobalState";
-import styles from "./Main.module.css";
+import React, { useContext } from 'react';
+import Country from '../Country/Country.js';
+import { CountryContext } from '../../context/GlobalState';
+import styles from './Main.module.css';
 
 const Main = () => {
   const { countries } = useContext(CountryContext);
   return countries ? (
     <React.Fragment>
-      <main>
+      <main className={styles.main}>
         {countries.map((country, index) => {
           return (
             <Country

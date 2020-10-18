@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
-import styles from "./Country.module.css";
-import { Link } from "react-router-dom";
+import React from 'react';
+import styles from './Country.module.css';
+import { Link } from 'react-router-dom';
 
 const Country = ({
   alpha3Code,
@@ -12,7 +12,8 @@ const Country = ({
 }) => {
   return (
     <React.Fragment>
-      <Link to={{
+      <Link
+        to={{
           pathname: `/${alpha3Code}`,
         }}
       >

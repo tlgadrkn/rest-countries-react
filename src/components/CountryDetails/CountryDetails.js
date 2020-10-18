@@ -1,13 +1,13 @@
-import React, { useContext } from "react";
-import styles from "./CountryDetails.module.css";
-import arrowIcon from "../../assets/icons/arrow-back-outline.svg";
-import { Link } from "react-router-dom";
-import { useParams, useHistory, useLocation, Redirect } from "react-router";
-import Navbar from "../../components/Navbar/Navbar";
+import React from 'react';
+import styles from './CountryDetails.module.css';
+import arrowIcon from '../../assets/icons/arrow-back-outline.svg';
+import { Link } from 'react-router-dom';
+import { useParams, useHistory, Redirect } from 'react-router';
+import Navbar from '../../components/Navbar/Navbar';
 import {
   getSpecificCountryFromLocalStorage,
   getFilteredBorderCountries,
-} from "../../utils/helperFunctions";
+} from '../../utils/helperFunctions';
 
 const CountryDetails = () => {
   let { code } = useParams();
@@ -15,10 +15,10 @@ const CountryDetails = () => {
   // const location = useLocation();
 
   if (code.length < 3) {
-    return <Redirect to={"/"} />;
+    return <Redirect to={'/'} />;
   }
 
-  let countryData = getSpecificCountryFromLocalStorage("countries", code)[0];
+  let countryData = getSpecificCountryFromLocalStorage('countries', code)[0];
   const filteredBorderCountries = getFilteredBorderCountries(
     countryData.borders
   );
@@ -29,10 +29,10 @@ const CountryDetails = () => {
         <div className={styles.container}>
           <button
             className={styles.countryDetailsButton}
-            type="button"
-            onClick={() => history.push("/")}
+            type='button'
+            onClick={() => history.push('/')}
           >
-            <img src={arrowIcon} alt="arrow icon left"></img>
+            <img src={arrowIcon} alt='arrow icon left'></img>
             Back
           </button>
 
@@ -71,16 +71,16 @@ const CountryDetails = () => {
                 </p>
                 <span></span>
                 <p>
-                  <strong>Currency: </strong>{" "}
+                  <strong>Currency: </strong>{' '}
                   {countryData.currencies.map((currency, index) => {
                     return <span key={index}>{currency.name}</span>;
                   })}
                 </p>
                 <p>
-                  <strong>Languages: </strong>{" "}
+                  <strong>Languages: </strong>{' '}
                   {countryData.languages.map((language, index) => {
                     return <span key={index}>{language.name}</span>;
-                  })}{" "}
+                  })}{' '}
                 </p>
               </div>
 

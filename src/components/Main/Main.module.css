@@ -1,18 +1,16 @@
-main {
-    padding: 0 3rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 5rem;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
+.main {
+  padding: 0 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5rem;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }
 
-
-
 @media (max-width: 940px) {
-    main {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        }
+  .main {
+    grid-template-columns: 1fr;
+    justify-items: center;
   }
+}

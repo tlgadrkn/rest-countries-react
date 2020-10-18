@@ -17,7 +17,7 @@ const Navbar = () => {
         </Link>
 
         <div className={styles.themeSwitcher}>
-          <a
+          <button
             onClick={() =>
               dispatch({
                 type: 'SET_THEME',
@@ -30,7 +30,7 @@ const Navbar = () => {
               alt='moon icon to swithc between dark mode and light'
             />
             {themeValue} Mode
-          </a>
+          </button>
         </div>
       </nav>
     </div>
