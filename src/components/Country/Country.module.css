@@ -1,5 +1,7 @@
 .card {
   background-color: var(--elements-primary);
+  transition: background-color 0.2s ease;
+  min-width: 10rem;
   border-radius: 5px;
   /* UPDATE BOX SHADOW */
   /* box-shadow: 0px 4px 8px 0 var(--text-primary); */

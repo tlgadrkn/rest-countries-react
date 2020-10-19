@@ -12,6 +12,7 @@
   padding: 1rem 1.5rem;
   background-color: var(--elements-primary);
   color: var(--text-primary);
+  transition: background-color 0.2s ease;
 }
 .filterContent .dropbtn img {
   height: 1rem;

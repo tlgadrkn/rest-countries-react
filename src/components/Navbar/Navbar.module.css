@@ -17,10 +17,13 @@
 .container {
   width: 100%;
   background-color: var(--elements-primary);
+  transition: background-color 0.2s ease;
+
   margin: 0 auto;
 }
 .navBar button {
   background-color: var(--elements-primary);
+  transition: background-color 0.2s ease;
   color: var(--text-primary);
   border: none;
   outline: none;

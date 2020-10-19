@@ -8,7 +8,6 @@ const Navbar = () => {
   const { themeValue, dispatch } = React.useContext(ThemeContext);
   const history = useHistory();
 
-  console.log(themeValue);
   return (
     <div className={styles.container}>
       <nav className={styles.navBar}>
@@ -27,9 +26,10 @@ const Navbar = () => {
           >
             <img
               src={moonIcon}
-              alt='moon icon to swithc between dark mode and light'
+              alt='moon icon to switch between dark and light mode'
             />
-            {themeValue} Mode
+            {themeValue && themeValue[0].toUpperCase() + themeValue.slice(1)}{' '}
+            Mode
           </button>
         </div>
       </nav>

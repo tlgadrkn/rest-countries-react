@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import styles from "./FilterButton.module.css";
-import arrowDownSvg from "../../assets/icons/arrow-down-outline.svg";
-import { CountryContext } from "../../context/GlobalState";
+import React, { useContext } from 'react';
+import styles from './FilterButton.module.css';
+import arrowDownOutline from '../../assets/icons/arrow-down-outline.svg';
+import { CountryContext } from '../../context/GlobalState';
 
 const FilterButton = () => {
   const { dispatch } = useContext(CountryContext);
@@ -10,12 +10,13 @@ const FilterButton = () => {
     <div className={styles.filterContent}>
       <div className={styles.dropdown}>
         <button className={styles.dropbtn}>
-          Filter by Region <img src={arrowDownSvg} alt="arrow down icon"></img>
+          Filter by Region{' '}
+          <img src={arrowDownOutline} alt='arrow down icon'></img>
         </button>
         <div className={styles.dropdownContent}>
           <ul
             onClick={(e) =>
-              dispatch({ type: "FILTER_COUNTRY", region: e.target.textContent })
+              dispatch({ type: 'FILTER_COUNTRY', region: e.target.textContent })
             }
           >
             <li>All</li>
