@@ -1,5 +1,3 @@
-import { useLocalStorage } from '../customHooks/customHooks';
-
 export const countryReducer = (state, action) => {
   switch (action.type) {
     case 'SEARCH_COUNTRY':
@@ -9,7 +7,8 @@ export const countryReducer = (state, action) => {
       });
     case 'FILTER_COUNTRY':
       if (action.region === 'All') {
-        return useLocalStorage('countries');
+        const data = window.localStorage.getItem('countries');
+        return JSON.parse(data);
       }
       const data = localStorage.getItem('countries');
       return JSON.parse(data).filter((country) => {
