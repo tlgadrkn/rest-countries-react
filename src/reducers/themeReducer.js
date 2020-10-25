@@ -16,6 +16,8 @@ export const themeReducer = (state, action) => {
       html.setAttribute('class', action.themeValue);
       return action.themeValue;
     default:
-      return state;
+      throw new Error(
+        `Wrong action type provided to themeReducer: ${action.type}`
+      );
   }
 };

@@ -1,39 +1,29 @@
-import React, { createContext, useReducer, useEffect } from 'react';
-import tempCountries from '../components/App/tempCountries';
+import React, { createContext, useReducer, useEffect, useState } from 'react';
 import { countryReducer } from '../context/countryReducer';
-// import fetchData from "./utils/fetchApi";
-// const API_URL = "https://restcountries.eu/rest/v2/all";
+import { fetchData } from '../utils/fetchApi';
+import { useLocalStorage } from '../customHooks/customHooks';
+const API_URL = 'https://restcountries.eu/rest/v2/all';
 
 export const CountryContext = createContext();
 
 export const CountryContextProvider = ({ children }) => {
-  const initialState = [...tempCountries];
-  const [countries, dispatch] = useReducer(countryReducer, initialState);
-
-  //   useEffect(() => {
-  //     async function fetchData(urlToFetch) {
-  //       try {
-  //         const result = await fetch(urlToFetch);
-  //         const data = await result.json();
-  //         setInitialState(data);
-  //     } catch (error) {
-  //         throw new Error(`Fetch Error - ${error}`);
-  //       }
-  //     }
-
-  //     fetchData(API_URL);
-  //     console.log(`called usefetch`);
-  //   }, []);
+  const [initialState, setInitialState] = useState(null);
+  const [countries, dispatch] = useReducer(countryReducer);
 
   useEffect(() => {
-    localStorage.setItem('countries', JSON.stringify(initialState));
-    console.log('RAN USEFFECT LOCAL STORAGE SET ITEM');
+    async function loadState() {
+      const data = await fetchData(API_URL);
+      console.log(data);
+      setInitialState(data);
+      localStorage.setItem('countries', JSON.stringify(data));
+    }
+    loadState();
   }, []);
 
   return (
     <CountryContext.Provider
       value={{
-        countries,
+        countries: !countries ? initialState : countries,
         dispatch,
       }}
     >

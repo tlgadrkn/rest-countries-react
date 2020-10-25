@@ -1,4 +1,4 @@
- const fetchData = async (url) => {
+export const fetchData = async (url) => {
   try {
     const res = await fetch(url);
     const data = await res.json();
@@ -7,4 +7,3 @@
     throw new Error(`Fetch Error - ${error} `);
   }
 };
-export default fetchData;
