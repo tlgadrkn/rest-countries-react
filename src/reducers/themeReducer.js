@@ -4,7 +4,7 @@ export const themeReducer = (state, action) => {
     case 'GET_THEME':
       const theme =
         localStorage.getItem('theme') ||
-        localStorage.setItem('theme', 'default');
+        localStorage.setItem('theme', JSON.stringify('default'));
 
       html.setAttribute('class', JSON.parse(theme));
       console.log(theme);

@@ -7,7 +7,7 @@ export const ThemeProvider = ({ children }) => {
   const [themeValue, dispatch] = React.useReducer(themeReducer);
   // const [prevState, setPrevState] = React.useState(null);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     dispatch({ type: 'GET_THEME' });
   }, [themeValue]);
 

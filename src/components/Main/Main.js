@@ -8,7 +8,7 @@ const Main = () => {
   return countries ? (
     <React.Fragment>
       <main className={styles.main}>
-        {countries.map((country, index) => {
+        {countries.map((country) => {
           return (
             <Country
               alpha3Code={country.alpha3Code}
@@ -23,7 +23,7 @@ const Main = () => {
               borders={country.borders}
               currencies={country.currencies}
               languages={country.languages}
-              key={index}
+              key={country.alpha3Code}
             />
           );
         })}

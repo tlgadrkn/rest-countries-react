@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './Country.module.css';
 import { Link } from 'react-router-dom';
 
@@ -44,6 +45,15 @@ const Country = ({
       </Link>
     </React.Fragment>
   );
+};
+
+Country.propTypes = {
+  alpha3Code: PropTypes.string.isRequired,
+  countryFlag: PropTypes.string.isRequired,
+  countryName: PropTypes.string.isRequired,
+  countryPopulation: PropTypes.number.isRequired,
+  countryRegion: PropTypes.string.isRequired,
+  countryCapital: PropTypes.string.isRequired,
 };
 
 export default Country;

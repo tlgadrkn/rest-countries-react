@@ -6,7 +6,6 @@ import { ThemeProvider } from '../../context/ThemeState';
 import Home from './Home';
 import CountryDetails from '../CountryDetails/CountryDetails';
 
-// ADD PROPTYPES
 // CREATE 404 NOT FOUND PAGE TO REDIRECT BACK TO HOME
 
 const App = () => {

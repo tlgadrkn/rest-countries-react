@@ -1,14 +1,14 @@
-import React, { createContext, useReducer, useEffect } from "react";
-import tempCountries from "../components/App/tempCountries";
-import { countryReducer } from "../context/countryReducer";
+import React, { createContext, useReducer, useEffect } from 'react';
+import tempCountries from '../components/App/tempCountries';
+import { countryReducer } from '../context/countryReducer';
 // import fetchData from "./utils/fetchApi";
 // const API_URL = "https://restcountries.eu/rest/v2/all";
 
-export const CountryContext = createContext(null);
+export const CountryContext = createContext();
 
 export const CountryContextProvider = ({ children }) => {
   const initialState = [...tempCountries];
-  const [countries, dispatch] = useReducer(countryReducer, [...initialState]);
+  const [countries, dispatch] = useReducer(countryReducer, initialState);
 
   //   useEffect(() => {
   //     async function fetchData(urlToFetch) {
@@ -26,8 +26,8 @@ export const CountryContextProvider = ({ children }) => {
   //   }, []);
 
   useEffect(() => {
-    localStorage.setItem("countries", JSON.stringify(initialState));
-    console.log("RAN USEFFECT LOCAL STORAGE SET ITEM");
+    localStorage.setItem('countries', JSON.stringify(initialState));
+    console.log('RAN USEFFECT LOCAL STORAGE SET ITEM');
   }, []);
 
   return (

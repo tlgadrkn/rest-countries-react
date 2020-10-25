@@ -10,18 +10,20 @@ import {
 } from '../../utils/helperFunctions';
 
 const CountryDetails = () => {
-  let { code } = useParams();
   const history = useHistory();
+  const { code } = useParams();
+  const countryData = getSpecificCountryFromLocalStorage('countries', code)[0];
+
   // const location = useLocation();
 
   if (code.length < 3) {
     return <Redirect to={'/'} />;
   }
 
-  let countryData = getSpecificCountryFromLocalStorage('countries', code)[0];
   const filteredBorderCountries = getFilteredBorderCountries(
     countryData.borders
   );
+
   return (
     <React.Fragment>
       <Navbar />
@@ -32,7 +34,7 @@ const CountryDetails = () => {
             type='button'
             onClick={() => history.push('/')}
           >
-            <img src={arrowIcon} alt='arrow icon left'></img>
+            <img src={arrowIcon} alt='an arrow ıcon poıntıng to left'></img>
             Back
           </button>
 
