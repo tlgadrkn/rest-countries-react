@@ -1,7 +1,6 @@
 import React, { createContext, useReducer, useEffect, useState } from 'react';
 import { countryReducer } from '../context/countryReducer';
 import { fetchData } from '../utils/fetchApi';
-import { useLocalStorage } from '../customHooks/customHooks';
 const API_URL = 'https://restcountries.eu/rest/v2/all';
 
 export const CountryContext = createContext();

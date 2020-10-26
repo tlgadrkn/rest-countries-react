@@ -19,10 +19,7 @@ const CountryDetails = () => {
   )[0];
 
   // const location = useLocation();
-
-  const filteredBorderCountries = getFilteredBorderCountries(
-    countryData.borders
-  );
+  var filteredBorderCountries = getFilteredBorderCountries(countryData.borders);
 
   if (code.length !== 3) {
     return <Redirect to={'/'} />;

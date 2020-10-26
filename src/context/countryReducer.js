@@ -1,17 +1,17 @@
+import { getDataFromLocalStorage } from '../utils/helperFunctions';
+
 export const countryReducer = (state, action) => {
   switch (action.type) {
     case 'SEARCH_COUNTRY':
-      let searchedData = localStorage.getItem('countries');
-      return JSON.parse(searchedData).filter((country) => {
-        return country.name.toUpperCase().includes(action.name.toUpperCase());
-      });
+      return getDataFromLocalStorage().filter((country) =>
+        country.name.toUpperCase().includes(action.name.toUpperCase())
+      );
+
     case 'FILTER_COUNTRY':
       if (action.region === 'All') {
-        const data = window.localStorage.getItem('countries');
-        return JSON.parse(data);
+        return getDataFromLocalStorage();
       }
-      const data = localStorage.getItem('countries');
-      return JSON.parse(data).filter((country) => {
+      return getDataFromLocalStorage().filter((country) => {
         return country.region
           .toUpperCase()
           .includes(action.region.toUpperCase());

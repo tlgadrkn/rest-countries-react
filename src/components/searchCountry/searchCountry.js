@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styles from '../searchCountry/searchCountry.module.css';
 import searchIcon from '../../assets/icons/search-outline.svg';
 import { CountryContext } from '../../context/GlobalState';
 
 const SearchCountry = () => {
-  const { dispatch } = useContext(CountryContext);
+  const { dispatch } = React.useContext(CountryContext);
+
   return (
     <React.Fragment>
       <div className={styles.searchBar}>

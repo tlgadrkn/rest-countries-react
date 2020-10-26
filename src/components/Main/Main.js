@@ -5,9 +5,9 @@ import styles from './Main.module.css';
 
 const Main = () => {
   const { countries } = useContext(CountryContext);
+  console.log(Object.keys(countries ? countries : {}).length);
 
-  console.log(countries);
-  return countries ? (
+  return countries && Object.keys(countries ? countries : {}).length > 0 ? (
     <React.Fragment>
       <main className={styles.main}>
         {countries.map((country) => {
