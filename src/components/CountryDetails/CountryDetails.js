@@ -19,18 +19,18 @@ const CountryDetails = () => {
   )[0];
 
   // const location = useLocation();
-  var filteredBorderCountries = getFilteredBorderCountries(countryData.borders);
 
   if (code.length !== 3) {
     return <Redirect to={'/'} />;
   }
 
+  var filteredBorderCountries = getFilteredBorderCountries(countryData.borders);
   return (
-    <React.Fragment>
+    <div>
       <Navbar />
       <CountryErrorBoundary>
         <section>
-          <div className={styles.container}>
+          <div className={styles.countryContainer}>
             <button
               className={styles.countryDetailsButton}
               type='button'
@@ -40,13 +40,15 @@ const CountryDetails = () => {
               Back
             </button>
 
-            <div className={styles.card}>
-              <div className={styles.cardHeader}>
+            <div className={styles.countryInfoWrapper}>
+              <div className={styles.countryFlag}>
                 <img src={countryData.flag} alt={`${countryData.flag} flag`} />
               </div>
-              <div className={styles.cardDetails}>
-                <div className={styles.left}>
+              <div className={styles.countryInfo}>
+                <div className={styles.countryName}>
                   <h2>{countryData.name}</h2>
+                </div>
+                <section className={styles.col}>
                   <p>
                     <strong>Native Name: </strong>
                     {countryData.nativeName}
@@ -67,8 +69,8 @@ const CountryDetails = () => {
                     <strong>Capital: </strong>
                     {countryData.capital}
                   </p>
-                </div>
-                <div className={styles.right}>
+                </section>
+                <div className={styles.col}>
                   <p>
                     <strong>Top Level Domain: </strong>
                     {countryData.topLevelDomain}
@@ -109,7 +111,7 @@ const CountryDetails = () => {
           </div>
         </section>
       </CountryErrorBoundary>
-    </React.Fragment>
+    </div>
   );
 };
 

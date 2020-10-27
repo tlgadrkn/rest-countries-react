@@ -1,60 +1,43 @@
-.container {
+.countryContainer {
   max-width: 1280px;
   margin: 0 auto;
 }
-.countryDetailsButton {
+.countryInfoWrapper {
   display: flex;
-  background-color: inherit;
-  font-size: 1rem;
-  border-radius: 5px;
-  padding: 0.5rem 1rem;
-  margin: 4rem 0;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
-}
-.countryDetailsButton:hover {
-  background-color: #f1f1f1;
-}
-
-.countryDetailsButton img {
-  height: 1rem;
-  padding-right: 0.5rem;
-}
-.card {
-  display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.card .cardHeader {
-  width: 40%;
-}
-
-.card .cardHeader img {
-  width: 100%;
-}
-
-.cardDetails {
-  width: 55%;
-  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-
-.card .left,
-.card .right {
-  line-height: 1.6;
+.countryFlag {
+  width: 45%;
+  height: 80%;
+  max-height: 25rem;
 }
 
-.card h2 {
-  padding-bottom: 1rem;
+.countryFlag img {
+  width: 100%;
+  max-height: 28rem;
+}
+
+.countryInfo {
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  justify-items: center;
+}
+.countryName {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.col {
+  line-height: 1.8;
+  width: calc(100% / 2);
 }
 
 .borderCountries {
   width: 100%;
-  display: flex;
   flex-flow: row wrap;
   align-self: flex-end;
   margin-top: 5rem;
@@ -64,23 +47,70 @@
   display: flex;
   flex-wrap: wrap;
 }
-.borderCountries ul  li{
-  /* margin: 0.4rem 0; */
+.borderCountries ul li {
+  margin: 0.4rem 0;
 }
 .borderCountries ul li a {
+  background-color: var(--elements-primary);
+
   text-decoration: none;
   margin: 0.4rem;
   padding: 0.1rem 1rem;
-  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
+.countryDetailsButton {
+  display: flex;
+  background-color: var(--elements-primary);
+  color: var(--text-primary);
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 0.5rem 1.5rem;
+  margin: 4rem 0;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
+}
+.countryDetailsButton:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
-@media (max-width: 768px) {
+.countryDetailsButton img {
+  height: 1rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 480px) {
+  .countryContainer {
+    margin: 1.5rem;
+  }
+  .countryFlag {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  .countryInfo {
+    width: 100%;
+  }
+  .countryName {
+    margin-bottom: 0rem;
+  }
+
+  .col {
+    width: 100%;
+    margin: 1.75rem 0rem;
+  }
+  .borderCountries {
+    margin-top: 2rem;
+  }
+}
+
+/* @media (max-width: 768px) {
   .container {
     flex-direction: column;
   }
-  .card {
+  .countryInfoWrapper {
     flex-direction: column;
     padding: 1rem;
   }
-}
+} */
