@@ -9,7 +9,7 @@ const Navbar = () => {
   const history = useHistory();
 
   return (
-    <div className={styles.container}>
+    <div className={styles.navbarContainer}>
       <nav className={styles.navBar}>
         <Link to={'/'} onClick={() => history.push('/')}>
           Where in the world?

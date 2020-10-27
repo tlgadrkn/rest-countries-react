@@ -9,8 +9,6 @@
 }
 
 body {
-  /* max-width: 1440px; */
-
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -21,13 +19,9 @@ body {
   transition: background-color 0.2s ease;
 }
 
-.App {
-  display: flex;
-  font-size: calc(10px + 2vmin);
-}
-
 .container {
-  max-width: 1240px;
+  max-width: 1440px;
+  /* max-width: 100%; */
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -36,6 +30,7 @@ body {
   display: flex;
   justify-content: space-between;
   margin: 2rem 0;
+  flex-flow: wrap;
 }
 
 li {

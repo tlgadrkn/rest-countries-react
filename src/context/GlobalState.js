@@ -1,6 +1,7 @@
 import React, { createContext, useReducer, useEffect, useState } from 'react';
 import { countryReducer } from '../context/countryReducer';
 import { fetchData } from '../utils/fetchApi';
+import { getDataFromLocalStorage } from '../utils/helperFunctions';
 const API_URL = 'https://restcountries.eu/rest/v2/all';
 
 export const CountryContext = createContext();
@@ -11,10 +12,19 @@ export const CountryContextProvider = ({ children }) => {
 
   useEffect(() => {
     async function loadState() {
-      const data = await fetchData(API_URL);
-      console.log(data);
-      setInitialState(data);
-      localStorage.setItem('countries', JSON.stringify(data));
+      const localStorageData = getDataFromLocalStorage();
+
+      if (!localStorageData) {
+        const data = await fetchData(API_URL);
+        console.log(data);
+        setInitialState(data);
+        localStorage.setItem('countries', JSON.stringify(data));
+        return;
+      }
+      console.log(
+        'did not made unnecessary fetch, got state from localStorage'
+      );
+      setInitialState(localStorageData);
     }
     loadState();
   }, []);

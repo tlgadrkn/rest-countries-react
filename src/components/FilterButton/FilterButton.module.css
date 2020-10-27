@@ -29,7 +29,8 @@
 .dropdownContent {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: var(--elements-primary);
+  color: var(--text-primary);
   border-radius: 5px;
   width: 12rem;
   min-width: 160px;
@@ -45,16 +46,29 @@
 }
 
 .dropdownContent li {
-  color: black;
   padding: 12px 16px;
   text-decoration: none;
   cursor: pointer;
 }
 
 .dropdownContent li:hover {
-  background-color: #f1f1f1;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .dropdown:hover .dropdownContent {
   display: block;
+}
+@media (max-width: 480px) {
+  .filterContent {
+    padding: 1em;
+
+    margin: 0 auto;
+  }
+
+  .filterContent button {
+    width: 100%;
+    /* width: 12rem; */
+    /* min-width: 160px; */
+    padding: 1rem 1.5rem;
+  }
 }

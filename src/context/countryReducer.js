@@ -18,7 +18,7 @@ export const countryReducer = (state, action) => {
       });
     default:
       throw new Error(
-        `Wrong action type provided to themeReducer: ${action.type}`
+        `Wrong action type provided to countryReducer: ${action.type}`
       );
   }
 };

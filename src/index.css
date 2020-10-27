@@ -9,6 +9,9 @@ body {
   color: var(--text-primary);
   text-color: var(--text-primary); */
 }
+svg {
+  color: red;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
