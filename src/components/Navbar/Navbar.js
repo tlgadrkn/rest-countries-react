@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Navbar.module.css';
-import moonIcon from '../../assets/icons/moon-outline.svg';
+import Moon from '../../assets/icons/Moon.js';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
 import { ThemeContext } from '../../context/ThemeState';
@@ -16,6 +16,7 @@ const Navbar = () => {
         </Link>
 
         <div className={styles.themeSwitcher}>
+          <Moon className={styles.moon} />
           <button
             onClick={() =>
               dispatch({
@@ -24,10 +25,6 @@ const Navbar = () => {
               })
             }
           >
-            <img
-              src={moonIcon}
-              alt='moon icon to switch between dark and light mode'
-            />
             {themeValue && themeValue[0].toUpperCase() + themeValue.slice(1)}{' '}
             Mode
           </button>

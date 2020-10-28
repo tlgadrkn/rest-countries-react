@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './CountryDetails.module.css';
-import arrowIcon from '../../assets/icons/arrow-back-outline.svg';
 import { Link } from 'react-router-dom';
 import { useParams, useHistory, Redirect } from 'react-router';
 import Navbar from '../../components/Navbar/Navbar';
@@ -9,6 +8,7 @@ import {
   getSpecificCountryFromLocalStorage,
   getFilteredBorderCountries,
 } from '../../utils/helperFunctions';
+import ArrowLeft from '../../assets/icons/ArrowLeft';
 
 const CountryDetails = () => {
   const history = useHistory();
@@ -36,7 +36,7 @@ const CountryDetails = () => {
               type='button'
               onClick={() => history.push('/')}
             >
-              <img src={arrowIcon} alt='an arrow ıcon poıntıng to left'></img>
+              <ArrowLeft className={styles.icon} />
               Back
             </button>
 

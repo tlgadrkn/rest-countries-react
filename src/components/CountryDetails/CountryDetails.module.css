@@ -76,9 +76,9 @@
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.countryDetailsButton img {
-  height: 1rem;
-  padding-right: 1rem;
+.icon {
+  fill: var(--text-primary);
+  margin-right: 0.5rem;
 }
 
 @media (max-width: 480px) {

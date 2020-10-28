@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../searchCountry/searchCountry.module.css';
-import searchIcon from '../../assets/icons/search-outline.svg';
+import SearchIcon from '../../assets/icons/SearchIcon.js';
 import { CountryContext } from '../../context/GlobalState';
 
 const SearchCountry = () => {
@@ -10,10 +10,9 @@ const SearchCountry = () => {
     <React.Fragment>
       <div className={styles.searchBar}>
         <form onSubmit={(e) => e.preventDefault()}>
-          <span>
-            {' '}
-            <img src={searchIcon} alt='seach bar icon' />{' '}
-          </span>
+          {' '}
+          <SearchIcon className={styles.SearchIcon} />
+          {/* <img src={searchIcon} alt='seach bar icon' />{' '} */}
           <input
             onChange={(e) => {
               dispatch({ type: 'SEARCH_COUNTRY', name: e.target.value });

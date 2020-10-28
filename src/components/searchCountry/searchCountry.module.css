@@ -23,12 +23,12 @@
 .searchBar input[type='text']:focus {
   width: 25rem;
 }
-
-.searchBar img {
+.SearchIcon {
   position: absolute;
   top: 3.65rem;
   width: 3rem;
-  height: 1.3rem;
+  height: 1.25rem;
+  fill: var(--text-primary);
 }
 
 @media (max-width: 480px) {
