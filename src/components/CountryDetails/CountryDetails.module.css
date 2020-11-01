@@ -80,6 +80,65 @@
   fill: var(--text-primary);
   margin-right: 0.5rem;
 }
+/* ipad pro and higher */
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .countryContainer {
+    margin: 1.5rem;
+  }
+
+  .countryInfo {
+    margin: 0 auto;
+    width: 55%;
+    justify-content: center;
+    justify-items: flex-start;
+  }
+
+  .countryFlag {
+    width: 40%;
+  }
+
+  .borderCountries {
+    align-self: flex-start;
+    margin-top: 5rem;
+  }
+}
+
+/* ipad */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .countryContainer {
+    margin: 1.5rem;
+  }
+
+  .countryInfo {
+    margin: 0 auto;
+    width: 50%;
+    justify-content: center;
+    justify-items: flex-start;
+  }
+
+  .countryFlag {
+    width: 40%;
+  }
+
+  .borderCountries {
+    /* max-width: 50%; */
+    align-self: flex-start;
+    margin-top: 5rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .countryContainer {
+    margin: 1.5rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .countryContainer {
+    margin: 1.5rem;
+  }
+}
 
 @media (max-width: 480px) {
   .countryContainer {
@@ -104,13 +163,3 @@
     margin-top: 2rem;
   }
 }
-
-/* @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-  .countryInfoWrapper {
-    flex-direction: column;
-    padding: 1rem;
-  }
-} */

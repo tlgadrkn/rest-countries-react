@@ -11,7 +11,7 @@ export function ErrorFallback({ error, resetErrorBoundary }) {
   );
 }
 
-function CountryErrorBoundary(props) {
+export function CountryErrorBoundary(props) {
   return <ErrorBoundary FallbackComponent={ErrorFallback} {...props} />;
 }
 export default CountryErrorBoundary;

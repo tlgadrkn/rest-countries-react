@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './Navbar.module.css';
-import Moon from '../../assets/icons/Moon.js';
+import Moon from '../Icons/Moon.js';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
 import { ThemeContext } from '../../context/ThemeState';
@@ -21,7 +21,7 @@ const Navbar = () => {
             onClick={() =>
               dispatch({
                 type: 'SET_THEME',
-                themeValue: themeValue === 'dark' ? 'default' : 'dark',
+                themeValue: themeValue === 'default' ? 'dark' : 'default',
               })
             }
           >

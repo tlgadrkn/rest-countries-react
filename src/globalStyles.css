@@ -2,6 +2,18 @@
   --bg-primary: hsl(0, 0%, 98%);
   --text-primary: hsl(200, 15%, 8%);
   --elements-primary: hsl(0, 0%, 100%);
+  --font-size-primary: 1rem;
+  --font-size-secondary: 0.8rem;
+  --btn-lg: 12rem;
+
+  /* tablet */
+
+  --min-width-tablet-portrait: 768px;
+  --max-width-tablet-portrait: 1024px;
+  --min-width-tablet-landscape: 1024px;
+  --max-width-tablet-landscape: 1024px;
+  --max-width-tablet: 1024px;
+  --max-width-tablet: 1024px;
 }
 
 .dark:root {

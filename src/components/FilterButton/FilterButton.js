@@ -9,7 +9,7 @@ const FilterButton = () => {
   return (
     <div className={styles.filterContent}>
       <div className={styles.dropdown}>
-        <button className={styles.dropbtn}>
+        <button>
           Filter by Region <ArrowDown className={styles.ArrowDown} />
         </button>
         <div className={styles.dropdownContent}>

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../searchCountry/searchCountry.module.css';
-import SearchIcon from '../../assets/icons/SearchIcon.js';
+import SearchIcon from '../Icons/SearchIcon.js';
 import { CountryContext } from '../../context/GlobalState';
 
 const SearchCountry = () => {
@@ -12,7 +12,6 @@ const SearchCountry = () => {
         <form onSubmit={(e) => e.preventDefault()}>
           {' '}
           <SearchIcon className={styles.SearchIcon} />
-          {/* <img src={searchIcon} alt='seach bar icon' />{' '} */}
           <input
             onChange={(e) => {
               dispatch({ type: 'SEARCH_COUNTRY', name: e.target.value });

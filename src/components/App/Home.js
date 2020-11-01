@@ -4,7 +4,7 @@ import Navbar from '../Navbar/Navbar.js';
 import SearchCountry from '../searchCountry/searchCountry.js';
 import FilterButton from '../../components/FilterButton/FilterButton.js';
 import Main from '../Main/Main.js';
-import CountryErrorBoundary from '../ErrorFallback/ErrorFallback';
+
 const Home = () => {
   return (
     <>
@@ -14,9 +14,7 @@ const Home = () => {
           <SearchCountry />
           <FilterButton />
         </div>
-        <CountryErrorBoundary>
-          <Main />
-        </CountryErrorBoundary>
+        <Main />
       </div>
     </>
   );

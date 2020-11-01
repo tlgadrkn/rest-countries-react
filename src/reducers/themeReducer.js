@@ -3,8 +3,8 @@ export const themeReducer = (state, action) => {
   switch (action.type) {
     case 'GET_THEME':
       const theme =
-        localStorage.getItem('theme') ||
-        localStorage.setItem('theme', JSON.stringify('default'));
+        window.localStorage.getItem('theme') ||
+        window.localStorage.setItem('theme', JSON.stringify('default'));
 
       html.setAttribute('class', JSON.parse(theme));
       console.log(theme);
@@ -12,8 +12,10 @@ export const themeReducer = (state, action) => {
 
     case 'SET_THEME':
       console.log(action);
-      localStorage.setItem('theme', JSON.stringify(action.themeValue));
+
+      window.localStorage.setItem('theme', JSON.stringify(action.themeValue));
       html.setAttribute('class', action.themeValue);
+
       return action.themeValue;
     default:
       throw new Error(
