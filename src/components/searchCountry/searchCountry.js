@@ -20,6 +20,7 @@ const SearchCountry = () => {
             type='text'
             name='search'
             placeholder={`Search for a country...`}
+            autoComplete='off'
           />
         </form>
       </div>

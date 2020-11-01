@@ -16,14 +16,10 @@ export const CountryContextProvider = ({ children }) => {
 
       if (!localStorageData) {
         const data = await fetchData(API_URL);
-        console.log(data);
         setInitialState(data);
         localStorage.setItem('countries', JSON.stringify(data));
         return;
       }
-      console.log(
-        'did not made unnecessary fetch, got state from localStorage'
-      );
       setInitialState(localStorageData);
     }
     loadState();

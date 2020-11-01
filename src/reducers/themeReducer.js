@@ -7,12 +7,9 @@ export const themeReducer = (state, action) => {
         window.localStorage.setItem('theme', JSON.stringify('default'));
 
       html.setAttribute('class', JSON.parse(theme));
-      console.log(theme);
       return JSON.parse(theme);
 
     case 'SET_THEME':
-      console.log(action);
-
       window.localStorage.setItem('theme', JSON.stringify(action.themeValue));
       html.setAttribute('class', action.themeValue);
 
