@@ -4,6 +4,7 @@ import Moon from '../Icons/Moon.js';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
 import { ThemeContext } from '../../context/ThemeState';
+
 const Navbar = () => {
   const { themeValue, dispatch } = React.useContext(ThemeContext);
   const history = useHistory();
@@ -25,8 +26,7 @@ const Navbar = () => {
               })
             }
           >
-            {themeValue && themeValue[0].toUpperCase() + themeValue.slice(1)}{' '}
-            Mode
+            {themeValue === 'default' ? 'Dark' : 'Default'} Mode
           </button>
         </div>
       </nav>

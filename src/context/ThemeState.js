@@ -5,7 +5,6 @@ export const ThemeContext = React.createContext(null);
 
 export const ThemeProvider = ({ children }) => {
   const [themeValue, dispatch] = React.useReducer(themeReducer);
-  // const [prevState, setPrevState] = React.useState(null);
 
   React.useLayoutEffect(() => {
     dispatch({ type: 'GET_THEME' });

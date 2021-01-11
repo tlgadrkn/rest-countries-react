@@ -25,3 +25,10 @@ export function getFilteredBorderCountries(countryBorders) {
   }
   return filteredCountryNames;
 }
+
+export const capitalizeFirstLetter = (string) => {
+  if (typeof string !== 'string') {
+    throw new TypeError(`${string} is not a string`);
+  }
+  return string.charAt(0).toUpperCase() + string.slice(1);
+};
