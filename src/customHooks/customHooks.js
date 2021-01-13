@@ -23,7 +23,7 @@ export function useLocalStorage(key, defaultValue = '') {
       previousKeyRef.current = key;
       window.localStorage.setItem(key, JSON.parse(state));
     }
-  }, [key]);
+  }, [key, state]);
 
   return [state, setState];
 }
