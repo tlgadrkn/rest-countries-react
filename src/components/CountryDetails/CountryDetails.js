@@ -1,4 +1,5 @@
 import React from 'react';
+import VanillaTilt from 'vanilla-tilt';
 import styles from './CountryDetails.module.css';
 import { Link } from 'react-router-dom';
 import { useParams, useHistory, Redirect } from 'react-router';
@@ -16,11 +17,22 @@ const CountryDetails = () => {
     'countries',
     code.toUpperCase()
   )[0];
+  const flagRef = React.useRef();
 
+  React.useEffect(() => {
+    const img = flagRef.current;
+    VanillaTilt.init(img, {
+      max: 8,
+      speed: 25,
+    });
+
+    return () => img.VanillaTilt?.destroy();
+  }, []);
   if (code.length !== 3) {
     return <Redirect to={'/'} />;
   }
   let filteredBorderCountries = getFilteredBorderCountries(countryData.borders);
+
   return (
     <div>
       <Navbar />
@@ -37,7 +49,11 @@ const CountryDetails = () => {
 
           <div className={styles.countryInfoWrapper}>
             <div className={styles.countryFlag}>
-              <img src={countryData.flag} alt={`${countryData.name} flag`} />
+              <img
+                ref={flagRef}
+                src={countryData.flag}
+                alt={`${countryData.name} flag`}
+              />
             </div>
             <div className={styles.countryInfo}>
               <div className={styles.countryName}>
