@@ -17,13 +17,10 @@ const CountryDetails = () => {
     code.toUpperCase()
   )[0];
 
-  // const location = useLocation();
-
   if (code.length !== 3) {
     return <Redirect to={'/'} />;
   }
-
-  var filteredBorderCountries = getFilteredBorderCountries(countryData.borders);
+  let filteredBorderCountries = getFilteredBorderCountries(countryData.borders);
   return (
     <div>
       <Navbar />

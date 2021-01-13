@@ -16,7 +16,6 @@
   height: 10vh;
   padding: 2rem 5rem;
   font-size: 0.5rem;
-  /* box-shadow: 0px 2px  rgb(214, 214, 214); */
   margin-bottom: 2vh;
 }
 .themeSwitcher {
@@ -38,9 +37,11 @@
   fill: var(--elements-primary);
   stroke: var(--text-primary);
   stroke-linecap: round;
+  height: 0.89rem;
+  width: 0.8rem;
   stroke-linejoin: round;
   stroke-width: 32px;
-  margin-right: 0.5rem;
+  margin-right: 0.4rem;
 }
 
 .navBar a:nth-child(1) {
