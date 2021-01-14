@@ -90,8 +90,14 @@ const CountryDetails = () => {
                 <span></span>
                 <p>
                   <strong>Currency: </strong>{' '}
-                  {countryData.currencies.map((currency) => {
-                    return <span key={currency.name}>{currency.name}</span>;
+                  {countryData.currencies.map((currency, index) => {
+                    return (
+                      <span key={currency.name}>
+                        {index + 1 !== countryData.currencies.length
+                          ? `${currency.name}, `
+                          : currency.name}
+                      </span>
+                    );
                   })}
                 </p>
                 <p>
