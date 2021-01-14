@@ -17,8 +17,8 @@ const CountryDetails = () => {
     'countries',
     code.toUpperCase()
   )[0];
-  const flagRef = React.useRef();
 
+  const flagRef = React.useRef();
   React.useEffect(() => {
     const img = flagRef.current;
     VanillaTilt.init(img, {
@@ -28,6 +28,7 @@ const CountryDetails = () => {
 
     return () => img.VanillaTilt?.destroy();
   }, []);
+
   if (code.length !== 3) {
     return <Redirect to={'/'} />;
   }
@@ -95,8 +96,14 @@ const CountryDetails = () => {
                 </p>
                 <p>
                   <strong>Languages: </strong>{' '}
-                  {countryData.languages.map((language) => {
-                    return <span key={language.name}>{language.name}</span>;
+                  {countryData.languages.map((language, index) => {
+                    return (
+                      <span key={language.name}>
+                        {index + 1 !== countryData.languages.length
+                          ? `${language.name}, `
+                          : language.name}
+                      </span>
+                    );
                   })}{' '}
                 </p>
               </div>
