@@ -8,6 +8,7 @@ export const ThemeProvider = ({ children }) => {
 
   React.useLayoutEffect(() => {
     //test
+    //test
     dispatch({ type: 'GET_THEME' });
   }, [themeValue]);
 
