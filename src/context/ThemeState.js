@@ -7,6 +7,7 @@ export const ThemeProvider = ({ children }) => {
   const [themeValue, dispatch] = React.useReducer(themeReducer);
 
   React.useLayoutEffect(() => {
+    //test
     dispatch({ type: 'GET_THEME' });
   }, [themeValue]);
 
