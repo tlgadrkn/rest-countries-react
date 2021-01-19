@@ -3,12 +3,10 @@ import styles from './Navbar.module.css';
 import Moon from '../Icons/Moon.js';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router';
-import { ThemeContext } from '../../context/ThemeState';
 
-const Navbar = () => {
-  const { themeValue, dispatch } = React.useContext(ThemeContext);
+const Navbar = ({ themeValue, handleThemeChange }) => {
   const history = useHistory();
-
+  console.log(themeValue);
   return (
     <div className={styles.navbarContainer}>
       <nav className={styles.navBar}>
@@ -20,10 +18,7 @@ const Navbar = () => {
           <Moon className={styles.moon} />
           <button
             onClick={() =>
-              dispatch({
-                type: 'SET_THEME',
-                themeValue: themeValue === 'default' ? 'dark' : 'default',
-              })
+              handleThemeChange(themeValue === 'default' ? 'dark' : 'default')
             }
           >
             {themeValue === 'default' ? 'Dark' : 'Default'} Mode

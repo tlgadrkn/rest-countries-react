@@ -12,10 +12,10 @@ export const themeReducer = (state, action) => {
 
     case 'SET_THEME':
       window.localStorage.setItem('theme', JSON.stringify(action.themeValue));
-      html.setAttribute('class', action.themeValue);
-
-      return action.themeValue;
+      console.log(action);
+      return action;
     default:
+      console.log(action);
       throw new Error(
         `Wrong action type provided to themeReducer: ${action.type}`
       );

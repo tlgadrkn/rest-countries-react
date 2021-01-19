@@ -13,18 +13,18 @@ const App = () => {
     <Router>
       <Switch>
         <>
-          <ThemeProvider>
+          {/* <ThemeProvider> */}
+          <Switch>
             <CountryContextProvider>
-              <Switch>
-                <Route exact path={`/`} component={Home} />
-                <Route path={`/:code`} component={CountryDetails} />
-                <Route
-                  path={'/'}
-                  render={() => <div>404 page not found</div>}
-                ></Route>
-              </Switch>
+              <Route exact path={`/`} component={Home} />
+              <Route path={`/:code`} component={CountryDetails} />
             </CountryContextProvider>
-          </ThemeProvider>
+            <Route
+              path={'/'}
+              render={() => <div>404 page not found</div>}
+            ></Route>
+          </Switch>
+          {/* </ThemeProvider> */}
         </>
       </Switch>
     </Router>

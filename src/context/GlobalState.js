@@ -13,7 +13,6 @@ export const CountryContextProvider = ({ children }) => {
   useEffect(() => {
     async function loadState() {
       const localStorageData = getDataFromLocalStorage();
-
       if (!localStorageData) {
         const data = await fetchData(API_URL);
         setInitialState(data);

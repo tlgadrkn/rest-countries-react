@@ -1,4 +1,5 @@
 import React from 'react';
+import { getDataFromLocalStorage } from '../utils/helperFunctions';
 
 export function useLocalStorage(key, defaultValue = '') {
   const [state, setState] = React.useState(() => {
@@ -27,3 +28,15 @@ export function useLocalStorage(key, defaultValue = '') {
 
   return [state, setState];
 }
+export const useMatchMedia = (query) => {
+  const [state, setState] = React.useState(null);
+
+  React.useEffect(() => {
+    const result = window.matchMedia(query).matches;
+    if (result) {
+      setState(result);
+    }
+  }, [query]);
+
+  return state;
+};
