@@ -9,8 +9,6 @@ const App = () => {
   const [themeValue, setThemeValue] = useTheme();
 
   React.useLayoutEffect(() => {
-    const $html = window.document.querySelector('html');
-    $html.setAttribute('class', themeValue);
     window.localStorage.setItem('theme', JSON.stringify(themeValue));
   }, [themeValue]);
 

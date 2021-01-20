@@ -2,11 +2,13 @@ import * as React from 'react';
 
 const useTheme = () => {
   const [state, setState] = React.useState(() => {
+    const userPrefersDark = window.matchMedia('(prefers-color-scheme: dark)')
+      .matches;
     const value = window.localStorage.getItem('theme');
-    if (value) {
-      return JSON.parse(value);
+    if (userPrefersDark && !value) {
+      return 'dark';
     }
-    return 'default';
+    return value ? JSON.parse(value) : 'default';
   });
 
   React.useLayoutEffect(() => {
