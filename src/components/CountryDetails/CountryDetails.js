@@ -10,7 +10,7 @@ import {
 } from '../../utils/helperFunctions';
 import ArrowLeft from '../Icons/ArrowLeft';
 
-const CountryDetails = () => {
+const CountryDetails = ({ ...props }) => {
   const history = useHistory();
   const { code } = useParams();
   const countryData = getSpecificCountryFromLocalStorage(
@@ -36,7 +36,7 @@ const CountryDetails = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar {...props} />
       <section>
         <div className={styles.countryContainer}>
           <button

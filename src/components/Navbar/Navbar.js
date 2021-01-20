@@ -6,7 +6,6 @@ import { useHistory } from 'react-router';
 
 const Navbar = ({ themeValue, handleThemeChange }) => {
   const history = useHistory();
-  console.log(themeValue);
   return (
     <div className={styles.navbarContainer}>
       <nav className={styles.navBar}>
