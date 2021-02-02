@@ -87,7 +87,7 @@ Please feel free to create an issue if you see a bug or something unexpected in 
 
 # Contributing <br>
 
-I give importance to people's feedbacks, suggestions. Any contribution are greatly appreciated.
+I give importance to people's feedbacks, suggestions. Any contribution greatly appreciated.
 
 In order to contribute, Please:
 
