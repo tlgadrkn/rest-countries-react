@@ -1,51 +1,104 @@
-# REST Countries API with color theme switcher
+# rest-countries-react
 
-![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)
+## About The Project
 
-## TODO
+This is an application that gives some information about all countries in the world.
 
-[ X ] Add Dark Mode
+Application let's user to:
 
-### Tools Used
+- See all countries on the homepage as a list
+- Search for a specific country
+- Filter countries by region
+- Click on a country to see more detailed information on a separate page
+- Click through to the border countries on the detail page
+- Toggle the color scheme between light and dark mode ( initially, it auto-detects user's preference. )
 
-(https://reactjs.org)
+The live version of app is [Here](https://rest-countries-react-eight.vercel.app/)
 
-## Available Scripts
+## Built With
+
+- [React] (https://reactjs.org/)
+- [React Router] (https://reactrouter.com/)
+- [create-react-app] (https://create-react-app.dev/)
+- [Rest Countries API] (https://restcountries.eu/)
+- [CSS Modules] (https://github.com/css-modules/css-modules)
+
+## System Requirements
+
+- [git][https://git-scm.com/] v2.27 or greater
+- [node][https://nodejs.org/en/] 14.5 or greater
+- [npm][https://nodejs.org/en/] v6 or greater
+
+To check if you're ok to continue, you can run these commands:
+
+```
+git --version
+node --version
+npm --version
+```
+
+If requirements above are not installed in your computer, you'll need to install them. By clicking on them you can go to their website, which can lead you the way.
+
+<!-- GETTING STARTED -->
+
+# Getting Started
+
+In order to view this project locally, you need to make sure you clone this repository and install it's dependencies.
+
+## Installation
+
+- Clone the repository
+
+  ```sh
+  git clone https://github.com/tlgadrkn/rest-countries-react.git
+  ```
+
+- Navigate to repository folder
+  ```sh
+  cd rest-countries-react
+  ```
+- Install NPM packages
+  ```sh
+  npm install
+  ```
+
+## Running The App
 
 In the project directory, you can run:
 
-### `npm start`
+```sh
+npm start
+```
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
+```sh
+npm run build
+```
 
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-Your challenge is to integrate with the [REST Countries API](https://restcountries.eu) to pull country data and display it like in the designs.
+# Bugs <br>
 
-You can use any JavaScript framework/library on the front-end such as [React](https://reactjs.org) or [Vue](https://vuejs.org). You also have complete control over which packages you use to do things like make HTTP requests or style your project.
+Please feel free to create an issue if you see a bug or something unexpected in the app.
 
-Your users should be able to:
+# Contributing <br>
 
-- See all countries from the API on the homepage
-- Search for a country using an `input` field
-- Filter countries by region
-- Click on a country to see more detailed information on a separate page
-- Click through to the border countries on the detail page
-- Toggle the color scheme between light and dark mode _(optional)_
+I give importance to people's feedbacks, suggestions. Any contribution are greatly appreciated.
+
+In order to contribute, Please:
+
+- Fork the Project
+- Create your Feature Branch (`git checkout -b feature/yourFeature`)
+- Commit your Changes (`git commit -m 'Brief explanation of feature`')
+- Push to the Branch (`git push origin feature/yourFeature`)
+- Open a Pull Request
+
+# Future Steps
+
+- Add a map which would focus on the country that user views, probably using [React Leaflet](https://react-leaflet.js.org/).
+- Display more specific data related to countries.
+- Optimize performance using [react-virtual](https://github.com/tannerlinsley/react-virtual)
