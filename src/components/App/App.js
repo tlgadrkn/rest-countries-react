@@ -1,9 +1,12 @@
-import React from 'react';
+import * as React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { CountryContextProvider } from '../../context/GlobalState';
 import useTheme from '../../customHooks/useTheme';
 import Home from './Home';
-import CountryDetails from '../CountryDetails/CountryDetails';
+
+const CountryDetails = React.lazy(() =>
+  import('../CountryDetails/CountryDetails')
+);
 
 const App = () => {
   const [themeValue, setThemeValue] = useTheme();
@@ -29,16 +32,18 @@ const App = () => {
                   />
                 )}
               />
-              <Route
-                path={`/:code`}
-                render={(props) => (
-                  <CountryDetails
-                    {...props}
-                    themeValue={themeValue}
-                    handleThemeChange={setThemeValue}
-                  />
-                )}
-              />
+              <React.Suspense fallback={<h1>loading countryDetails</h1>}>
+                <Route
+                  path={`/:code`}
+                  render={(props) => (
+                    <CountryDetails
+                      {...props}
+                      themeValue={themeValue}
+                      handleThemeChange={setThemeValue}
+                    />
+                  )}
+                />
+              </React.Suspense>
             </CountryContextProvider>
             <Route
               path={'/'}
